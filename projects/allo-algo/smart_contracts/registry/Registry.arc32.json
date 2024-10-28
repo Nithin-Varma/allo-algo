@@ -1,0 +1,140 @@
+{
+    "hints": {
+        "getProfileById(uint512)(uint512,uint256,string,string,address,uint256)": {
+            "call_config": {
+                "no_op": "CALL"
+            },
+            "structs": {
+                "output": {
+                    "name": "Profile",
+                    "elements": [
+                        [
+                            "id",
+                            "uint512"
+                        ],
+                        [
+                            "nonce",
+                            "uint256"
+                        ],
+                        [
+                            "name",
+                            "string"
+                        ],
+                        [
+                            "metadata",
+                            "string"
+                        ],
+                        [
+                            "owner",
+                            "address"
+                        ],
+                        [
+                            "anchor",
+                            "uint256"
+                        ]
+                    ]
+                }
+            }
+        },
+        "getProfileByAnchor(account)(uint512,uint256,string,string,address,uint256)": {
+            "call_config": {
+                "no_op": "CALL"
+            },
+            "structs": {
+                "output": {
+                    "name": "Profile",
+                    "elements": [
+                        [
+                            "id",
+                            "uint512"
+                        ],
+                        [
+                            "nonce",
+                            "uint256"
+                        ],
+                        [
+                            "name",
+                            "string"
+                        ],
+                        [
+                            "metadata",
+                            "string"
+                        ],
+                        [
+                            "owner",
+                            "address"
+                        ],
+                        [
+                            "anchor",
+                            "uint256"
+                        ]
+                    ]
+                }
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMucmVnaXN0cnkuY29udHJhY3QuUmVnaXN0cnkuYXBwcm92YWxfcHJvZ3JhbToKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBibnogbWFpbl9lbnRyeXBvaW50QDIKICAgIGNhbGxzdWIgX19pbml0X18KCm1haW5fZW50cnlwb2ludEAyOgogICAgY2FsbHN1YiBfX3B1eWFfYXJjNF9yb3V0ZXJfXwogICAgcmV0dXJuCgoKLy8gc21hcnRfY29udHJhY3RzLnJlZ2lzdHJ5LmNvbnRyYWN0LlJlZ2lzdHJ5Ll9fcHV5YV9hcmM0X3JvdXRlcl9fKCkgLT4gdWludDY0OgpfX3B1eWFfYXJjNF9yb3V0ZXJfXzoKICAgIC8vIGNvbnRyYWN0LnB5OjEyCiAgICAvLyBjbGFzcyBSZWdpc3RyeShBUkM0Q29udHJhY3QpOgogICAgcHJvdG8gMCAxCiAgICB0eG4gTnVtQXBwQXJncwogICAgYnogX19wdXlhX2FyYzRfcm91dGVyX19fYmFyZV9yb3V0aW5nQDYKICAgIG1ldGhvZCAiZ2V0UHJvZmlsZUJ5SWQodWludDUxMikodWludDUxMix1aW50MjU2LHN0cmluZyxzdHJpbmcsYWRkcmVzcyx1aW50MjU2KSIKICAgIG1ldGhvZCAiZ2V0UHJvZmlsZUJ5QW5jaG9yKGFjY291bnQpKHVpbnQ1MTIsdWludDI1NixzdHJpbmcsc3RyaW5nLGFkZHJlc3MsdWludDI1NikiCiAgICB0eG5hIEFwcGxpY2F0aW9uQXJncyAwCiAgICBtYXRjaCBfX3B1eWFfYXJjNF9yb3V0ZXJfX19nZXRQcm9maWxlQnlJZF9yb3V0ZUAyIF9fcHV5YV9hcmM0X3JvdXRlcl9fX2dldFByb2ZpbGVCeUFuY2hvcl9yb3V0ZUAzCiAgICBpbnQgMAogICAgcmV0c3ViCgpfX3B1eWFfYXJjNF9yb3V0ZXJfX19nZXRQcm9maWxlQnlJZF9yb3V0ZUAyOgogICAgLy8gY29udHJhY3QucHk6MjAKICAgIC8vIEBhcmM0LmFiaW1ldGhvZCgpCiAgICB0eG4gT25Db21wbGV0aW9uCiAgICAhCiAgICBhc3NlcnQgLy8gT25Db21wbGV0aW9uIGlzIE5vT3AKICAgIHR4biBBcHBsaWNhdGlvbklECiAgICBhc3NlcnQgLy8gaXMgbm90IGNyZWF0aW5nCiAgICAvLyBjb250cmFjdC5weToxMgogICAgLy8gY2xhc3MgUmVnaXN0cnkoQVJDNENvbnRyYWN0KToKICAgIHR4bmEgQXBwbGljYXRpb25BcmdzIDEKICAgIC8vIGNvbnRyYWN0LnB5OjIwCiAgICAvLyBAYXJjNC5hYmltZXRob2QoKQogICAgY2FsbHN1YiBnZXRQcm9maWxlQnlJZAogICAgYnl0ZSAweDE1MWY3Yzc1CiAgICBzd2FwCiAgICBjb25jYXQKICAgIGxvZwogICAgaW50IDEKICAgIHJldHN1YgoKX19wdXlhX2FyYzRfcm91dGVyX19fZ2V0UHJvZmlsZUJ5QW5jaG9yX3JvdXRlQDM6CiAgICAvLyBjb250cmFjdC5weToyNAogICAgLy8gQGFyYzQuYWJpbWV0aG9kKCkKICAgIHR4biBPbkNvbXBsZXRpb24KICAgICEKICAgIGFzc2VydCAvLyBPbkNvbXBsZXRpb24gaXMgTm9PcAogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgIGFzc2VydCAvLyBpcyBub3QgY3JlYXRpbmcKICAgIC8vIGNvbnRyYWN0LnB5OjEyCiAgICAvLyBjbGFzcyBSZWdpc3RyeShBUkM0Q29udHJhY3QpOgogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMQogICAgYnRvaQogICAgdHhuYXMgQWNjb3VudHMKICAgIC8vIGNvbnRyYWN0LnB5OjI0CiAgICAvLyBAYXJjNC5hYmltZXRob2QoKQogICAgY2FsbHN1YiBnZXRQcm9maWxlQnlBbmNob3IKICAgIGJ5dGUgMHgxNTFmN2M3NQogICAgc3dhcAogICAgY29uY2F0CiAgICBsb2cKICAgIGludCAxCiAgICByZXRzdWIKCl9fcHV5YV9hcmM0X3JvdXRlcl9fX2JhcmVfcm91dGluZ0A2OgogICAgLy8gY29udHJhY3QucHk6MTIKICAgIC8vIGNsYXNzIFJlZ2lzdHJ5KEFSQzRDb250cmFjdCk6CiAgICB0eG4gT25Db21wbGV0aW9uCiAgICBibnogX19wdXlhX2FyYzRfcm91dGVyX19fYWZ0ZXJfaWZfZWxzZUAxMAogICAgdHhuIEFwcGxpY2F0aW9uSUQKICAgICEKICAgIGFzc2VydCAvLyBpcyBjcmVhdGluZwogICAgaW50IDEKICAgIHJldHN1YgoKX19wdXlhX2FyYzRfcm91dGVyX19fYWZ0ZXJfaWZfZWxzZUAxMDoKICAgIC8vIGNvbnRyYWN0LnB5OjEyCiAgICAvLyBjbGFzcyBSZWdpc3RyeShBUkM0Q29udHJhY3QpOgogICAgaW50IDAKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5yZWdpc3RyeS5jb250cmFjdC5SZWdpc3RyeS5nZXRQcm9maWxlQnlJZChpZDogYnl0ZXMpIC0+IGJ5dGVzOgpnZXRQcm9maWxlQnlJZDoKICAgIC8vIGNvbnRyYWN0LnB5OjIwLTIxCiAgICAvLyBAYXJjNC5hYmltZXRob2QoKQogICAgLy8gZGVmIGdldFByb2ZpbGVCeUlkKHNlbGYsIGlkOiBCaWdVSW50KSAtPiBQcm9maWxlOgogICAgcHJvdG8gMSAxCiAgICAvLyBjb250cmFjdC5weToyMgogICAgLy8gcmV0dXJuIHNlbGYucHJvZmlsZXNCeUlkW2lkXQogICAgYnl0ZSAicHJvZmlsZXNCeUlkIgogICAgZnJhbWVfZGlnIC0xCiAgICBjb25jYXQKICAgIGJveF9nZXQKICAgIGFzc2VydCAvLyBjaGVjayBzZWxmLnByb2ZpbGVzQnlJZCBlbnRyeSBleGlzdHMKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5yZWdpc3RyeS5jb250cmFjdC5SZWdpc3RyeS5nZXRQcm9maWxlQnlBbmNob3IoYW5jaG9yOiBieXRlcykgLT4gYnl0ZXM6CmdldFByb2ZpbGVCeUFuY2hvcjoKICAgIC8vIGNvbnRyYWN0LnB5OjI0LTI1CiAgICAvLyBAYXJjNC5hYmltZXRob2QoKQogICAgLy8gZGVmIGdldFByb2ZpbGVCeUFuY2hvcihzZWxmLCBhbmNob3I6IEFjY291bnQpIC0+IFByb2ZpbGU6CiAgICBwcm90byAxIDEKICAgIC8vIGNvbnRyYWN0LnB5OjI2CiAgICAvLyByZXR1cm4gc2VsZi5wcm9maWxlc0J5SWRbc2VsZi5hbmNob3JUb1Byb2ZpbGVJZFthbmNob3JdXQogICAgYnl0ZSAiYW5jaG9yVG9Qcm9maWxlSWQiCiAgICBmcmFtZV9kaWcgLTEKICAgIGNvbmNhdAogICAgYm94X2dldAogICAgYXNzZXJ0IC8vIGNoZWNrIHNlbGYuYW5jaG9yVG9Qcm9maWxlSWQgZW50cnkgZXhpc3RzCiAgICBieXRlICJwcm9maWxlc0J5SWQiCiAgICBzd2FwCiAgICBjb25jYXQKICAgIGJveF9nZXQKICAgIGFzc2VydCAvLyBjaGVjayBzZWxmLnByb2ZpbGVzQnlJZCBlbnRyeSBleGlzdHMKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5yZWdpc3RyeS5jb250cmFjdC5SZWdpc3RyeS5fX2luaXRfXygpIC0+IHZvaWQ6Cl9faW5pdF9fOgogICAgLy8gY29udHJhY3QucHk6MTMKICAgIC8vIGRlZiBfX2luaXRfXyhzZWxmKSAtPiBOb25lOgogICAgcHJvdG8gMCAwCiAgICAvLyBjb250cmFjdC5weToxNAogICAgLy8gc2VsZi52ZXJzaW9uID0gQmlnVUludChWRVJTSU9OKQogICAgYnl0ZSAidmVyc2lvbiIKICAgIGJ5dGUgMHgwMQogICAgYXBwX2dsb2JhbF9wdXQKICAgIHJldHN1Ygo=",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMucmVnaXN0cnkuY29udHJhY3QuUmVnaXN0cnkuY2xlYXJfc3RhdGVfcHJvZ3JhbToKICAgIGludCAxCiAgICByZXR1cm4K"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 1,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {
+                "version": {
+                    "type": "bytes",
+                    "key": "version"
+                }
+            },
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "Registry",
+        "methods": [
+            {
+                "name": "getProfileById",
+                "args": [
+                    {
+                        "type": "uint512",
+                        "name": "id"
+                    }
+                ],
+                "readonly": false,
+                "returns": {
+                    "type": "(uint512,uint256,string,string,address,uint256)"
+                }
+            },
+            {
+                "name": "getProfileByAnchor",
+                "args": [
+                    {
+                        "type": "account",
+                        "name": "anchor"
+                    }
+                ],
+                "readonly": false,
+                "returns": {
+                    "type": "(uint512,uint256,string,string,address,uint256)"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE"
+    }
+}

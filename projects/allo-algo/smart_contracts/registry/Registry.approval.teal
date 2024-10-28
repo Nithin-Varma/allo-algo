@@ -1,0 +1,136 @@
+#pragma version 10
+
+smart_contracts.registry.contract.Registry.approval_program:
+    txn ApplicationID
+    bnz main_entrypoint@2
+    callsub __init__
+
+main_entrypoint@2:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.registry.contract.Registry.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // contract.py:12
+    // class Registry(ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@6
+    method "getProfileById(uint512)(uint512,uint256,string,string,address,uint256)"
+    method "getProfileByAnchor(account)(uint512,uint256,string,string,address,uint256)"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___getProfileById_route@2 __puya_arc4_router___getProfileByAnchor_route@3
+    int 0
+    retsub
+
+__puya_arc4_router___getProfileById_route@2:
+    // contract.py:20
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:12
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    // contract.py:20
+    // @arc4.abimethod()
+    callsub getProfileById
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getProfileByAnchor_route@3:
+    // contract.py:24
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:12
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // contract.py:24
+    // @arc4.abimethod()
+    callsub getProfileByAnchor
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___bare_routing@6:
+    // contract.py:12
+    // class Registry(ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@10
+    txn ApplicationID
+    !
+    assert // is creating
+    int 1
+    retsub
+
+__puya_arc4_router___after_if_else@10:
+    // contract.py:12
+    // class Registry(ARC4Contract):
+    int 0
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.getProfileById(id: bytes) -> bytes:
+getProfileById:
+    // contract.py:20-21
+    // @arc4.abimethod()
+    // def getProfileById(self, id: BigUInt) -> Profile:
+    proto 1 1
+    // contract.py:22
+    // return self.profilesById[id]
+    byte "profilesById"
+    frame_dig -1
+    concat
+    box_get
+    assert // check self.profilesById entry exists
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.getProfileByAnchor(anchor: bytes) -> bytes:
+getProfileByAnchor:
+    // contract.py:24-25
+    // @arc4.abimethod()
+    // def getProfileByAnchor(self, anchor: Account) -> Profile:
+    proto 1 1
+    // contract.py:26
+    // return self.profilesById[self.anchorToProfileId[anchor]]
+    byte "anchorToProfileId"
+    frame_dig -1
+    concat
+    box_get
+    assert // check self.anchorToProfileId entry exists
+    byte "profilesById"
+    swap
+    concat
+    box_get
+    assert // check self.profilesById entry exists
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.__init__() -> void:
+__init__:
+    // contract.py:13
+    // def __init__(self) -> None:
+    proto 0 0
+    // contract.py:14
+    // self.version = BigUInt(VERSION)
+    byte "version"
+    byte 0x01
+    app_global_put
+    retsub
