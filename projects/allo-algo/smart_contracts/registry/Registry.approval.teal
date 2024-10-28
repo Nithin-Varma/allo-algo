@@ -12,30 +12,35 @@ main_entrypoint@2:
 
 // smart_contracts.registry.contract.Registry.__puya_arc4_router__() -> uint64:
 __puya_arc4_router__:
-    // contract.py:12
+    // contract.py:44
     // class Registry(ARC4Contract):
     proto 0 1
     txn NumAppArgs
-    bz __puya_arc4_router___bare_routing@6
-    method "getProfileById(uint512)(uint512,uint256,string,string,address,uint256)"
-    method "getProfileByAnchor(account)(uint512,uint256,string,string,address,uint256)"
+    bz __puya_arc4_router___bare_routing@10
+    method "getProfileById(byte[])(byte[],uint256,string,string,address,uint64,address[])"
+    method "getProfileByAnchor(uint64)(byte[],uint256,string,string,address,uint64,address[])"
+    method "createProfile(uint256,string,string)byte[]"
+    method "addMember(byte[],address)void"
+    method "updateProfileName(byte[],string)void"
+    method "updateProfileMetadata(byte[],string)void"
     txna ApplicationArgs 0
-    match __puya_arc4_router___getProfileById_route@2 __puya_arc4_router___getProfileByAnchor_route@3
+    match __puya_arc4_router___getProfileById_route@2 __puya_arc4_router___getProfileByAnchor_route@3 __puya_arc4_router___createProfile_route@4 __puya_arc4_router___addMember_route@5 __puya_arc4_router___updateProfileName_route@6 __puya_arc4_router___updateProfileMetadata_route@7
     int 0
     retsub
 
 __puya_arc4_router___getProfileById_route@2:
-    // contract.py:20
+    // contract.py:51
     // @arc4.abimethod()
     txn OnCompletion
     !
     assert // OnCompletion is NoOp
     txn ApplicationID
     assert // is not creating
-    // contract.py:12
+    // contract.py:44
     // class Registry(ARC4Contract):
     txna ApplicationArgs 1
-    // contract.py:20
+    extract 2 0
+    // contract.py:51
     // @arc4.abimethod()
     callsub getProfileById
     byte 0x151f7c75
@@ -46,19 +51,18 @@ __puya_arc4_router___getProfileById_route@2:
     retsub
 
 __puya_arc4_router___getProfileByAnchor_route@3:
-    // contract.py:24
+    // contract.py:55
     // @arc4.abimethod()
     txn OnCompletion
     !
     assert // OnCompletion is NoOp
     txn ApplicationID
     assert // is not creating
-    // contract.py:12
+    // contract.py:44
     // class Registry(ARC4Contract):
     txna ApplicationArgs 1
     btoi
-    txnas Accounts
-    // contract.py:24
+    // contract.py:55
     // @arc4.abimethod()
     callsub getProfileByAnchor
     byte 0x151f7c75
@@ -68,19 +72,105 @@ __puya_arc4_router___getProfileByAnchor_route@3:
     int 1
     retsub
 
-__puya_arc4_router___bare_routing@6:
-    // contract.py:12
+__puya_arc4_router___createProfile_route@4:
+    // contract.py:58
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:44
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    txna ApplicationArgs 3
+    // contract.py:58
+    // @arc4.abimethod()
+    callsub createProfile
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___addMember_route@5:
+    // contract.py:80
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:44
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    // contract.py:80
+    // @arc4.abimethod()
+    callsub addMember
+    int 1
+    retsub
+
+__puya_arc4_router___updateProfileName_route@6:
+    // contract.py:86
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:44
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    // contract.py:86
+    // @arc4.abimethod()
+    callsub updateProfileName
+    int 1
+    retsub
+
+__puya_arc4_router___updateProfileMetadata_route@7:
+    // contract.py:92
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:44
+    // class Registry(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    // contract.py:92
+    // @arc4.abimethod()
+    callsub updateProfileMetadata
+    int 1
+    retsub
+
+__puya_arc4_router___bare_routing@10:
+    // contract.py:44
     // class Registry(ARC4Contract):
     txn OnCompletion
-    bnz __puya_arc4_router___after_if_else@10
+    bnz __puya_arc4_router___after_if_else@14
     txn ApplicationID
     !
     assert // is creating
     int 1
     retsub
 
-__puya_arc4_router___after_if_else@10:
-    // contract.py:12
+__puya_arc4_router___after_if_else@14:
+    // contract.py:44
     // class Registry(ARC4Contract):
     int 0
     retsub
@@ -88,11 +178,11 @@ __puya_arc4_router___after_if_else@10:
 
 // smart_contracts.registry.contract.Registry.getProfileById(id: bytes) -> bytes:
 getProfileById:
-    // contract.py:20-21
+    // contract.py:51-52
     // @arc4.abimethod()
-    // def getProfileById(self, id: BigUInt) -> Profile:
+    // def getProfileById(self, id: Bytes) -> Profile:
     proto 1 1
-    // contract.py:22
+    // contract.py:53
     // return self.profilesById[id]
     byte "profilesById"
     frame_dig -1
@@ -102,16 +192,18 @@ getProfileById:
     retsub
 
 
-// smart_contracts.registry.contract.Registry.getProfileByAnchor(anchor: bytes) -> bytes:
+// smart_contracts.registry.contract.Registry.getProfileByAnchor(anchor: uint64) -> bytes:
 getProfileByAnchor:
-    // contract.py:24-25
+    // contract.py:55-56
     // @arc4.abimethod()
-    // def getProfileByAnchor(self, anchor: Account) -> Profile:
+    // def getProfileByAnchor(self, anchor: algopy.UInt64) -> Profile:
     proto 1 1
-    // contract.py:26
+    // contract.py:57
     // return self.profilesById[self.anchorToProfileId[anchor]]
-    byte "anchorToProfileId"
     frame_dig -1
+    itob
+    byte "anchorToProfileId"
+    swap
     concat
     box_get
     assert // check self.anchorToProfileId entry exists
@@ -123,12 +215,352 @@ getProfileByAnchor:
     retsub
 
 
+// smart_contracts.registry.contract.Registry.createProfile(nonce: bytes, name: bytes, metadata: bytes) -> bytes:
+createProfile:
+    // contract.py:58-59
+    // @arc4.abimethod()
+    // def createProfile(self, nonce: arc4.UInt256,name:arc4.String,metadata:arc4.String) -> Bytes:
+    proto 3 1
+    // contract.py:62
+    // id = algopy.op.sha256(algopy.op.concat(nonce.bytes,algopy.Txn.sender.bytes))
+    frame_dig -3
+    txn Sender
+    concat
+    sha256
+    // contract.py:65-70
+    // # application_txn = itxn.ApplicationCall(
+    // # approval_program=ANCHOR_APPROVAL_CONTRACT_BYTES,
+    // # clear_state_program=ANCHOR_CLEAR_CONTRACT_BYTES,
+    // # fee=0,
+    // # ).submit()
+    // anchor_app = arc4.arc4_create(Anchor).created_app
+    itxn_begin
+    int 1
+    itxn_field GlobalNumByteSlice
+    byte base64 CoEBQw==
+    itxn_field ClearStateProgramPages
+    byte base64 CiADAAEEJgEFb3duZXIxGEAAA4gA/IgAAUOKAAExG0EAe4IEBIVKUY0EO9fOLAQP2ZhwBCgmsgI2GgCOBAACABQAKgBGIokxGRREMRhENhoBF8AciABTI4kxGRREMRhENhoBF8AcNhoCF4gATSOJMRkURDEYRDYaARfAHDYaAhfAMDYaAxeIAFQjiTEZFEQxGEQ2GgEXwDCIAF0jiTEZQAAGMRgURCOJIomKAQAiKGVEMgMSRCiL/2eJigIAiAARsYv/sgiL/rIHI7IQIrIBs4mKAAAxACIoZUQSRImKAwCI/+6xi/+yEov+shGL/bIUJLIQIrIBs4mKAQCI/9OxMQAishKL/7IRshQkshAisgGziYoAACgyA2eJ
+    itxn_field ApprovalProgramPages
+    int appl
+    itxn_field TypeEnum
+    int 0
+    itxn_field Fee
+    itxn_submit
+    itxn CreatedApplicationID
+    // contract.py:73
+    // profile = Profile(id=arc4.DynamicBytes.from_bytes(id),nonce=nonce,name=name,metadata=metadata,owner=arc4.Address.from_bytes(algopy.Txn.sender.bytes),anchor=arc4.UInt64.from_bytes(algopy.op.itob(anchor_app.id)),memebers= arc4.DynamicArray(arc4.Address()))
+    txn Sender
+    cover 2
+    itob
+    cover 2
+    dup
+    len
+    int 80
+    +
+    byte 0x0050
+    frame_dig -3
+    concat
+    swap
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    swap
+    frame_dig -2
+    len
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    frame_dig -1
+    len
+    uncover 2
+    +
+    swap
+    uncover 3
+    concat
+    dig 3
+    concat
+    swap
+    itob
+    extract 6 2
+    concat
+    dig 1
+    concat
+    frame_dig -2
+    concat
+    frame_dig -1
+    concat
+    byte base32 AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+    concat
+    // contract.py:75
+    // self.profilesById[id] = profile.copy()
+    byte "profilesById"
+    dig 2
+    concat
+    dup
+    box_del
+    pop
+    dig 1
+    box_put
+    // contract.py:77
+    // self.anchorToProfileId[anchor_app.id] = profile.id.bytes
+    dup
+    int 0
+    extract_uint16
+    swap
+    dup
+    int 34
+    extract_uint16
+    byte "anchorToProfileId"
+    uncover 5
+    concat
+    uncover 2
+    uncover 3
+    uncover 3
+    substring3
+    dig 1
+    box_del
+    pop
+    box_put
+    // contract.py:79
+    // return id
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.addMember(profileId: bytes, member: bytes) -> void:
+addMember:
+    // contract.py:80-81
+    // @arc4.abimethod()
+    // def addMember(self,profileId:Bytes,member:arc4.Address) -> None:
+    proto 2 0
+    // contract.py:82
+    // profile : Profile = self.profilesById[profileId].copy()
+    byte "profilesById"
+    frame_dig -2
+    concat
+    dup
+    box_get
+    assert // check self.profilesById entry exists
+    // contract.py:83
+    // profile.memebers.append(member)
+    dup
+    int 78
+    extract_uint16
+    swap
+    dup
+    len
+    swap
+    dup
+    dig 3
+    uncover 3
+    substring3
+    extract 2 0
+    frame_dig -1
+    concat
+    dup
+    len
+    int 32
+    /
+    itob
+    extract 6 2
+    swap
+    concat
+    swap
+    int 0
+    uncover 3
+    extract3
+    swap
+    concat
+    // contract.py:84
+    // self.profilesById[profileId] = profile.copy()
+    dig 1
+    box_del
+    pop
+    box_put
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.updateProfileName(profileId: bytes, name: bytes) -> void:
+updateProfileName:
+    // contract.py:86-87
+    // @arc4.abimethod()
+    // def updateProfileName(self,profileId:Bytes,name:arc4.String) -> None:
+    proto 2 0
+    // contract.py:88
+    // self._onlyProfileOwner(profileId)
+    frame_dig -2
+    callsub _onlyProfileOwner
+    // contract.py:89
+    // profile = self.profilesById[profileId].copy()
+    byte "profilesById"
+    frame_dig -2
+    concat
+    dup
+    box_get
+    assert // check self.profilesById entry exists
+    // contract.py:90
+    // profile.name = name
+    dup
+    int 34
+    extract_uint16
+    dig 1
+    int 0
+    dig 2
+    extract3
+    swap
+    dig 2
+    int 36
+    extract_uint16
+    swap
+    dig 3
+    len
+    swap
+    uncover 4
+    dig 3
+    uncover 3
+    substring3
+    uncover 3
+    frame_dig -1
+    concat
+    swap
+    concat
+    cover 2
+    -
+    swap
+    frame_dig -1
+    len
+    dig 1
+    int 36
+    extract_uint16
+    dig 1
+    +
+    dig 3
+    -
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    replace2 36
+    dup
+    int 78
+    extract_uint16
+    uncover 2
+    +
+    uncover 2
+    -
+    itob
+    extract 6 2
+    replace2 78
+    // contract.py:91
+    // self.profilesById[profileId] = profile.copy()
+    dig 1
+    box_del
+    pop
+    box_put
+    retsub
+
+
+// smart_contracts.registry.contract.Registry._onlyProfileOwner(profileId: bytes) -> void:
+_onlyProfileOwner:
+    // contract.py:104-105
+    // @subroutine
+    // def _onlyProfileOwner(self,profileId:Bytes) -> None:
+    proto 1 0
+    // contract.py:106
+    // profile = self.profilesById[profileId].copy()
+    byte "profilesById"
+    frame_dig -1
+    concat
+    box_get
+    assert // check self.profilesById entry exists
+    // contract.py:107
+    // assert profile.owner == algopy.Txn.sender, "Only the owner of the profile can call this function"
+    extract 38 32 // on error: Index access is out of bounds
+    txn Sender
+    ==
+    assert // Only the owner of the profile can call this function
+    retsub
+
+
+// smart_contracts.registry.contract.Registry.updateProfileMetadata(profileId: bytes, metadata: bytes) -> void:
+updateProfileMetadata:
+    // contract.py:92-93
+    // @arc4.abimethod()
+    // def updateProfileMetadata(self,profileId:Bytes,metadata:arc4.String) -> None:
+    proto 2 0
+    // contract.py:94
+    // self._onlyProfileOwner(profileId)
+    frame_dig -2
+    callsub _onlyProfileOwner
+    // contract.py:95
+    // profile = self.profilesById[profileId].copy()
+    byte "profilesById"
+    frame_dig -2
+    concat
+    dup
+    box_get
+    assert // check self.profilesById entry exists
+    // contract.py:96
+    // profile.metadata = metadata
+    dup
+    int 36
+    extract_uint16
+    dig 1
+    int 0
+    dig 2
+    extract3
+    swap
+    dig 2
+    int 78
+    extract_uint16
+    swap
+    dig 3
+    len
+    swap
+    uncover 4
+    dig 3
+    uncover 3
+    substring3
+    uncover 3
+    frame_dig -1
+    concat
+    swap
+    concat
+    cover 2
+    -
+    swap
+    frame_dig -1
+    len
+    dig 1
+    int 78
+    extract_uint16
+    +
+    uncover 2
+    -
+    itob
+    extract 6 2
+    replace2 78
+    // contract.py:97
+    // self.profilesById[profileId] = profile.copy()
+    dig 1
+    box_del
+    pop
+    box_put
+    retsub
+
+
 // smart_contracts.registry.contract.Registry.__init__() -> void:
 __init__:
-    // contract.py:13
+    // contract.py:45
     // def __init__(self) -> None:
     proto 0 0
-    // contract.py:14
+    // contract.py:46
     // self.version = BigUInt(VERSION)
     byte "version"
     byte 0x01

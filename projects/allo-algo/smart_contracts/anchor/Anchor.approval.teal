@@ -1,0 +1,265 @@
+#pragma version 10
+
+smart_contracts.anchor.contract.Anchor.approval_program:
+    txn ApplicationID
+    bnz main_entrypoint@2
+    callsub __init__
+
+main_entrypoint@2:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.anchor.contract.Anchor.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@8
+    method "create(account)void"
+    method "transferAlgo(account,uint64)void"
+    method "transferAsset(account,asset,uint64)void"
+    method "opt_into_asset(asset)void"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___create_route@2 __puya_arc4_router___transferAlgo_route@3 __puya_arc4_router___transferAsset_route@4 __puya_arc4_router___opt_into_asset_route@5
+    int 0
+    retsub
+
+__puya_arc4_router___create_route@2:
+    // contract.py:5
+    // @algopy.arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // contract.py:5
+    // @algopy.arc4.abimethod()
+    callsub create
+    int 1
+    retsub
+
+__puya_arc4_router___transferAlgo_route@3:
+    // contract.py:16
+    // @algopy.arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    btoi
+    // contract.py:16
+    // @algopy.arc4.abimethod()
+    callsub transferAlgo
+    int 1
+    retsub
+
+__puya_arc4_router___transferAsset_route@4:
+    // contract.py:20
+    // @algopy.arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    btoi
+    txnas Assets
+    txna ApplicationArgs 3
+    btoi
+    // contract.py:20
+    // @algopy.arc4.abimethod()
+    callsub transferAsset
+    int 1
+    retsub
+
+__puya_arc4_router___opt_into_asset_route@5:
+    // contract.py:24
+    // @algopy.arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Assets
+    // contract.py:24
+    // @algopy.arc4.abimethod()
+    callsub opt_into_asset
+    int 1
+    retsub
+
+__puya_arc4_router___bare_routing@8:
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@12
+    txn ApplicationID
+    !
+    assert // is creating
+    int 1
+    retsub
+
+__puya_arc4_router___after_if_else@12:
+    // contract.py:2
+    // class Anchor(algopy.ARC4Contract):
+    int 0
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor.create(owner: bytes) -> void:
+create:
+    // contract.py:5-6
+    // @algopy.arc4.abimethod()
+    // def create(self, owner: algopy.Account) -> None:
+    proto 1 0
+    // contract.py:8
+    // self.owner == algopy.Account()
+    int 0
+    byte "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    global ZeroAddress
+    ==
+    // contract.py:7-9
+    // assert (
+    //     self.owner == algopy.Account()
+    // ), "Contract has already been initialized"
+    assert // Contract has already been initialized
+    // contract.py:10
+    // self.owner = owner
+    byte "owner"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor.transferAlgo(receiver: bytes, amount: uint64) -> void:
+transferAlgo:
+    // contract.py:16-17
+    // @algopy.arc4.abimethod()
+    // def transferAlgo(self,receiver:algopy.Account,amount:algopy.UInt64)-> None:
+    proto 2 0
+    // contract.py:18
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // contract.py:19
+    // algopy.itxn.Payment(receiver=receiver, amount=amount).submit()
+    itxn_begin
+    frame_dig -1
+    itxn_field Amount
+    frame_dig -2
+    itxn_field Receiver
+    int pay
+    itxn_field TypeEnum
+    int 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor._onlyOwner() -> void:
+_onlyOwner:
+    // contract.py:11-12
+    // @algopy.subroutine
+    // def _onlyOwner(self) -> None:
+    proto 0 0
+    // contract.py:14
+    // algopy.Txn.sender == self.owner
+    txn Sender
+    int 0
+    byte "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    ==
+    // contract.py:13-15
+    // assert (
+    //     algopy.Txn.sender == self.owner
+    // ), "Only the account set in global_state.owner may call this method"
+    assert // Only the account set in global_state.owner may call this method
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor.transferAsset(receiver: bytes, asset: uint64, amount: uint64) -> void:
+transferAsset:
+    // contract.py:20-21
+    // @algopy.arc4.abimethod()
+    // def transferAsset(self,receiver:algopy.Account,asset:algopy.Asset,amount:algopy.UInt64)-> None:
+    proto 3 0
+    // contract.py:22
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // contract.py:23
+    // algopy.itxn.AssetTransfer(asset_receiver=receiver, xfer_asset=asset, asset_amount=amount).submit()
+    itxn_begin
+    frame_dig -1
+    itxn_field AssetAmount
+    frame_dig -2
+    itxn_field XferAsset
+    frame_dig -3
+    itxn_field AssetReceiver
+    int axfer
+    itxn_field TypeEnum
+    int 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor.opt_into_asset(asset: uint64) -> void:
+opt_into_asset:
+    // contract.py:24-25
+    // @algopy.arc4.abimethod()
+    // def opt_into_asset(self,asset:algopy.Asset)-> None:
+    proto 1 0
+    // contract.py:26
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // contract.py:27
+    // algopy.itxn.AssetTransfer(asset_receiver=algopy.Txn.sender, xfer_asset=asset,asset_amount=algopy.UInt64(0)).submit()
+    itxn_begin
+    txn Sender
+    int 0
+    itxn_field AssetAmount
+    frame_dig -1
+    itxn_field XferAsset
+    itxn_field AssetReceiver
+    int axfer
+    itxn_field TypeEnum
+    int 0
+    itxn_field Fee
+    itxn_submit
+    retsub
+
+
+// smart_contracts.anchor.contract.Anchor.__init__() -> void:
+__init__:
+    // contract.py:3
+    // def __init__(self) -> None:
+    proto 0 0
+    // contract.py:4
+    // self.owner = algopy.Account()
+    byte "owner"
+    global ZeroAddress
+    app_global_put
+    retsub

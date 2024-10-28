@@ -20,10 +20,10 @@ class Anchor(algopy.ARC4Contract):
     @algopy.arc4.abimethod()
     def transferAsset(self,receiver:algopy.Account,asset:algopy.Asset,amount:algopy.UInt64)-> None:
         self._onlyOwner()
-        algopy.itxn.AssetTransfer(asset_receiver=receiver, xfer_asset=asset, amount=amount).submit()
+        algopy.itxn.AssetTransfer(asset_receiver=receiver, xfer_asset=asset, asset_amount=amount).submit()
     @algopy.arc4.abimethod()
     def opt_into_asset(self,asset:algopy.Asset)-> None:
         self._onlyOwner()
-        algopy.itxn.AssetTransfer(asset_receiver=algopy.Txn.sender, xfer_asset=asset)
+        algopy.itxn.AssetTransfer(asset_receiver=algopy.Txn.sender, xfer_asset=asset,asset_amount=algopy.UInt64(0)).submit()
     
 
