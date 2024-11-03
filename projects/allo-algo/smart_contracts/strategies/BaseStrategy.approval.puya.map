@@ -1,0 +1,3032 @@
+{
+  "version": 3,
+  "sources": [
+    "baseStrategy.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAUA;;;AACQ;AAAsB;;AAAtB;AACA;;AAAkB;;AAAlB;AACA;;AAAwB;AAAxB;AACA;AAAc;AAAd;AACA;AAAkB;AAAlB;;AANR;;;AAAA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;AAAA;AAQK;;AAAA;AAAA;AAAA;;AAAA;AARL;;;AAAA;;;AAAA;;;AAQK;;;AAAA;AAAA;AAcA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;;;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AA1CL;;;AAAA;AA0CK;;;AAAA;AAAA;AAOA;;AAAA;AAAA;AAAA;;AAAA;AAjDL;;;AAAA;AAiDK;;;AAAA;AAAA;AAMA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAnEL;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAmEK;;;AAAA;AAAA;AASA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAxFL;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAwFK;;;AAAA;AAAA;AAQA;;AAAA;AAAA;AAAA;;AAAA;AAhGL;;;AAAA;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAgGK;;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AApGL;;;AAAA;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAoGK;;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAxGL;;;AAAA;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAwGK;;;AAAA;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AA5GL;;;AAAA;;;AAAA;;;AAAA;;;AAAA;AAAA;;AA4GK;;;AAAA;AAAA;AA5GL;;AAAA;;;;;;;;;AAAA;AAAA;AAQA;;;AAEQ;;;AACA;AAAA;;AAAA;AACA;;AAAA;;AAAA;;AAER;;;AAEoC;AAAA;AAAA;AAAA;AAArB;;AAAA;AAAP;;AAMR;;;AAEe;AAAA;AAAA;AAAA;AAAP;AAER;;;AAEe;AAAA;AAAA;AAAA;AAAP;AAER;;;AAEe;AAAA;;AAAA;AAAA;AAAP;AAER;;;AAEe;AAAA;AAAA;AAAA;AAAP;AAER;;;AAEe;AAAA;;AAAA;AAAA;AAAP;AAER;;;AAEQ;;;AACO;AAAA;AAAA;AAAA;AAAA;AAAP;AACA;;AAAA;AACA;AAAA;;AAAA;;AAER;;;AAEQ;;;AACA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;AAeR;;;AAEQ;;;AACA;;;;AApDR;;;AAEe;AAAA;AAAA;AAAA;AAAP;;AAoER;;;AAEQ;;;;AAMR;;;;;;AAIA;;;;;;AAIA;;;;;;AAIA;;;AAEQ;;;AACA;;;AACA;;AAAA;;AAAA;;AAAA;;;;AAAA;;AACA;;AAAA;;AAAA;;;;AAAA;;AACA;;AAAA;;AAAA;;;AAAA;;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.approval_program",
+      "params": {},
+      "block": "smart_contracts.strategies.baseStrategy.BaseStrategy.approval_program",
+      "stack_in": [],
+      "op": "intcblock 1 0"
+    },
+    "5": {
+      "op": "bytecblock \"poolId\" 0x151f7c75 \"alloContractId\" \"poolAmount\" \"strategyId\" \"poolActive\""
+    },
+    "67": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "69": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "72": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__init__",
+      "op": "callsub __init__"
+    },
+    "75": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__puya_arc4_router__",
+      "op": "callsub __puya_arc4_router__",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "78": {
+      "op": "return",
+      "stack_out": []
+    },
+    "79": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.__init__",
+      "params": {},
+      "block": "__init__",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "82": {
+      "op": "bytec_2 // \"alloContractId\""
+    },
+    "83": {
+      "op": "global ZeroAddress",
+      "defined_out": [
+        "\"alloContractId\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"alloContractId\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "85": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "86": {
+      "op": "bytec 4 // \"strategyId\"",
+      "defined_out": [
+        "\"strategyId\""
+      ],
+      "stack_out": [
+        "\"strategyId\""
+      ]
+    },
+    "88": {
+      "op": "pushbytes \"\"",
+      "defined_out": [
+        "\"\"",
+        "\"strategyId\""
+      ],
+      "stack_out": [
+        "\"strategyId\"",
+        "\"\""
+      ]
+    },
+    "90": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "91": {
+      "op": "bytec 5 // \"poolActive\"",
+      "defined_out": [
+        "\"poolActive\""
+      ],
+      "stack_out": [
+        "\"poolActive\""
+      ]
+    },
+    "93": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "\"poolActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "\"poolActive\"",
+        "0"
+      ]
+    },
+    "94": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "95": {
+      "op": "bytec_0 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\""
+      ],
+      "stack_out": [
+        "\"poolId\""
+      ]
+    },
+    "96": {
+      "op": "intc_1 // 0",
+      "stack_out": [
+        "\"poolId\"",
+        "0"
+      ]
+    },
+    "97": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "98": {
+      "op": "bytec_3 // \"poolAmount\"",
+      "defined_out": [
+        "\"poolAmount\""
+      ],
+      "stack_out": [
+        "\"poolAmount\""
+      ]
+    },
+    "99": {
+      "op": "intc_1 // 0",
+      "stack_out": [
+        "\"poolAmount\"",
+        "0"
+      ]
+    },
+    "100": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "101": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "102": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.__puya_arc4_router__",
+      "params": {},
+      "block": "__puya_arc4_router__",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "105": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "107": {
+      "op": "bz __puya_arc4_router___bare_routing@24",
+      "stack_out": []
+    },
+    "110": {
+      "op": "pushbytess 0x73e8cb16 0x08534d4e 0x6df65c82 0x66bf8410 0x06ecfaf7 0xbb01eab2 0x85c70fcb 0xb78d5e3b 0xbd7d0e80 0x7a5c210b 0x2ca276c6 0x4203ec19 0x3cad8fd7 0xc6d2fc13 0xde0d0b54 0x8cb09f7c 0xe08edf85 0x03ab7495 0xd3739bd6 0xfc5e7dcb // method \"initializeVariables(address,string)void\", method \"getAlloContractId()address\", method \"getPoolId()uint64\", method \"getStrategyId()string\", method \"getPoolAmount()uint64\", method \"isPoolActive()bool\", method \"baseStrategy_init(uint64)void\", method \"increasePoolAmount(uint64)void\", method \"registerRecipient(byte[],account)void\", method \"beforeRegisterRecipient(byte[],account)void\", method \"afterRegisterRecipient(byte[],account)void\", method \"register_Recipient(byte[],account)void\", method \"allocate(byte[],account)void\", method \"beforeAllocate(byte[],account)void\", method \"afterAllocate(byte[],account)void\", method \"Allocate(byte[],account)void\", method \"distribute(address[],byte[],account)void\", method \"beforeDistribute(address[],byte[],account)void\", method \"afterDistribute(address[],byte[],account)void\", method \"Distribute(address[],byte[],account)void\""
+    },
+    "212": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(Allocate(byte[],account)void)",
+        "Method(Distribute(address[],byte[],account)void)",
+        "Method(afterAllocate(byte[],account)void)",
+        "Method(afterDistribute(address[],byte[],account)void)",
+        "Method(afterRegisterRecipient(byte[],account)void)",
+        "Method(allocate(byte[],account)void)",
+        "Method(baseStrategy_init(uint64)void)",
+        "Method(beforeAllocate(byte[],account)void)",
+        "Method(beforeDistribute(address[],byte[],account)void)",
+        "Method(beforeRegisterRecipient(byte[],account)void)",
+        "Method(distribute(address[],byte[],account)void)",
+        "Method(getAlloContractId()address)",
+        "Method(getPoolAmount()uint64)",
+        "Method(getPoolId()uint64)",
+        "Method(getStrategyId()string)",
+        "Method(increasePoolAmount(uint64)void)",
+        "Method(initializeVariables(address,string)void)",
+        "Method(isPoolActive()bool)",
+        "Method(registerRecipient(byte[],account)void)",
+        "Method(register_Recipient(byte[],account)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(initializeVariables(address,string)void)",
+        "Method(getAlloContractId()address)",
+        "Method(getPoolId()uint64)",
+        "Method(getStrategyId()string)",
+        "Method(getPoolAmount()uint64)",
+        "Method(isPoolActive()bool)",
+        "Method(baseStrategy_init(uint64)void)",
+        "Method(increasePoolAmount(uint64)void)",
+        "Method(registerRecipient(byte[],account)void)",
+        "Method(beforeRegisterRecipient(byte[],account)void)",
+        "Method(afterRegisterRecipient(byte[],account)void)",
+        "Method(register_Recipient(byte[],account)void)",
+        "Method(allocate(byte[],account)void)",
+        "Method(beforeAllocate(byte[],account)void)",
+        "Method(afterAllocate(byte[],account)void)",
+        "Method(Allocate(byte[],account)void)",
+        "Method(distribute(address[],byte[],account)void)",
+        "Method(beforeDistribute(address[],byte[],account)void)",
+        "Method(afterDistribute(address[],byte[],account)void)",
+        "Method(Distribute(address[],byte[],account)void)",
+        "tmp%2#0"
+      ]
+    },
+    "215": {
+      "op": "match __puya_arc4_router___initializeVariables_route@2 __puya_arc4_router___getAlloContractId_route@3 __puya_arc4_router___getPoolId_route@4 __puya_arc4_router___getStrategyId_route@5 __puya_arc4_router___getPoolAmount_route@6 __puya_arc4_router___isPoolActive_route@7 __puya_arc4_router___baseStrategy_init_route@8 __puya_arc4_router___increasePoolAmount_route@9 __puya_arc4_router___registerRecipient_route@10 __puya_arc4_router___beforeRegisterRecipient_route@11 __puya_arc4_router___afterRegisterRecipient_route@12 __puya_arc4_router___register_Recipient_route@13 __puya_arc4_router___allocate_route@14 __puya_arc4_router___beforeAllocate_route@15 __puya_arc4_router___afterAllocate_route@16 __puya_arc4_router___Allocate_route@17 __puya_arc4_router___distribute_route@18 __puya_arc4_router___beforeDistribute_route@19 __puya_arc4_router___afterDistribute_route@20 __puya_arc4_router___Distribute_route@21",
+      "stack_out": []
+    },
+    "257": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "258": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "259": {
+      "block": "__puya_arc4_router___initializeVariables_route@2",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "261": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "262": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "263": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "265": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "266": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "269": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0"
+      ]
+    },
+    "272": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%9#0"
+      ]
+    },
+    "275": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.initializeVariables",
+      "op": "callsub initializeVariables",
+      "stack_out": []
+    },
+    "278": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "279": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "280": {
+      "block": "__puya_arc4_router___getAlloContractId_route@3",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "282": {
+      "op": "!",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "283": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "284": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "286": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "287": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.getAlloContractId",
+      "op": "callsub getAlloContractId",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "290": {
+      "op": "bytec_1 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0",
+        "0x151f7c75"
+      ]
+    },
+    "291": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "tmp%14#0"
+      ]
+    },
+    "292": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "293": {
+      "op": "log",
+      "stack_out": []
+    },
+    "294": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "295": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "296": {
+      "block": "__puya_arc4_router___getPoolId_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%16#0"
+      ]
+    },
+    "298": {
+      "op": "!",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%17#0"
+      ]
+    },
+    "299": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "300": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%18#0"
+      ]
+    },
+    "302": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "303": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolId",
+      "op": "callsub getPoolId",
+      "defined_out": [
+        "to_encode%0#0"
+      ],
+      "stack_out": [
+        "to_encode%0#0"
+      ]
+    },
+    "306": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0"
+      ]
+    },
+    "307": {
+      "op": "bytec_1 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "308": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%0#0"
+      ]
+    },
+    "309": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "310": {
+      "op": "log",
+      "stack_out": []
+    },
+    "311": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "312": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "313": {
+      "block": "__puya_arc4_router___getStrategyId_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "315": {
+      "op": "!",
+      "defined_out": [
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "tmp%22#0"
+      ]
+    },
+    "316": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "317": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "319": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "320": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.getStrategyId",
+      "op": "callsub getStrategyId",
+      "defined_out": [
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0"
+      ]
+    },
+    "323": {
+      "op": "dup",
+      "defined_out": [
+        "to_encode%1#0",
+        "to_encode%1#0 (copy)"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "to_encode%1#0 (copy)"
+      ]
+    },
+    "324": {
+      "op": "len",
+      "defined_out": [
+        "length%0#0",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "length%0#0"
+      ]
+    },
+    "325": {
+      "op": "itob",
+      "defined_out": [
+        "as_bytes%0#0",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "as_bytes%0#0"
+      ]
+    },
+    "326": {
+      "op": "extract 6 2",
+      "defined_out": [
+        "length_uint16%0#0",
+        "to_encode%1#0"
+      ],
+      "stack_out": [
+        "to_encode%1#0",
+        "length_uint16%0#0"
+      ]
+    },
+    "329": {
+      "op": "swap",
+      "stack_out": [
+        "length_uint16%0#0",
+        "to_encode%1#0"
+      ]
+    },
+    "330": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_value%0#0"
+      ],
+      "stack_out": [
+        "encoded_value%0#0"
+      ]
+    },
+    "331": {
+      "op": "bytec_1 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_value%0#0"
+      ],
+      "stack_out": [
+        "encoded_value%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "332": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_value%0#0"
+      ]
+    },
+    "333": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "334": {
+      "op": "log",
+      "stack_out": []
+    },
+    "335": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "336": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "337": {
+      "block": "__puya_arc4_router___getPoolAmount_route@6",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "tmp%26#0"
+      ]
+    },
+    "339": {
+      "op": "!",
+      "defined_out": [
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%27#0"
+      ]
+    },
+    "340": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "341": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%28#0"
+      ]
+    },
+    "343": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "344": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolAmount",
+      "op": "callsub getPoolAmount",
+      "defined_out": [
+        "to_encode%2#0"
+      ],
+      "stack_out": [
+        "to_encode%2#0"
+      ]
+    },
+    "347": {
+      "op": "itob",
+      "defined_out": [
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0"
+      ]
+    },
+    "348": {
+      "op": "bytec_1 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ],
+      "stack_out": [
+        "val_as_bytes%1#0",
+        "0x151f7c75"
+      ]
+    },
+    "349": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "val_as_bytes%1#0"
+      ]
+    },
+    "350": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%30#0"
+      ]
+    },
+    "351": {
+      "op": "log",
+      "stack_out": []
+    },
+    "352": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "353": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "354": {
+      "block": "__puya_arc4_router___isPoolActive_route@7",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%31#0"
+      ]
+    },
+    "356": {
+      "op": "!",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "357": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "358": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%33#0"
+      ]
+    },
+    "360": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "361": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.isPoolActive",
+      "op": "callsub isPoolActive",
+      "defined_out": [
+        "to_encode%3#0"
+      ],
+      "stack_out": [
+        "to_encode%3#0"
+      ]
+    },
+    "364": {
+      "op": "pushbytes 0x00",
+      "defined_out": [
+        "0x00",
+        "to_encode%3#0"
+      ],
+      "stack_out": [
+        "to_encode%3#0",
+        "0x00"
+      ]
+    },
+    "367": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0",
+        "0x00",
+        "to_encode%3#0"
+      ],
+      "stack_out": [
+        "to_encode%3#0",
+        "0x00",
+        "0"
+      ]
+    },
+    "368": {
+      "op": "uncover 2",
+      "stack_out": [
+        "0x00",
+        "0",
+        "to_encode%3#0"
+      ]
+    },
+    "370": {
+      "op": "setbit",
+      "defined_out": [
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0"
+      ]
+    },
+    "371": {
+      "op": "bytec_1 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ],
+      "stack_out": [
+        "encoded_bool%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "372": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "encoded_bool%0#0"
+      ]
+    },
+    "373": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "374": {
+      "op": "log",
+      "stack_out": []
+    },
+    "375": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "376": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "377": {
+      "block": "__puya_arc4_router___baseStrategy_init_route@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "379": {
+      "op": "!",
+      "defined_out": [
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "tmp%37#0"
+      ]
+    },
+    "380": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "381": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "383": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "384": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "387": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%41#0"
+      ],
+      "stack_out": [
+        "tmp%41#0"
+      ]
+    },
+    "388": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.baseStrategy_init",
+      "op": "callsub baseStrategy_init",
+      "stack_out": []
+    },
+    "391": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "392": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "393": {
+      "block": "__puya_arc4_router___increasePoolAmount_route@9",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%42#0"
+      ],
+      "stack_out": [
+        "tmp%42#0"
+      ]
+    },
+    "395": {
+      "op": "!",
+      "defined_out": [
+        "tmp%43#0"
+      ],
+      "stack_out": [
+        "tmp%43#0"
+      ]
+    },
+    "396": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "397": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%44#0"
+      ],
+      "stack_out": [
+        "tmp%44#0"
+      ]
+    },
+    "399": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "400": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%46#0"
+      ],
+      "stack_out": [
+        "tmp%46#0"
+      ]
+    },
+    "403": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%47#0"
+      ],
+      "stack_out": [
+        "tmp%47#0"
+      ]
+    },
+    "404": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.increasePoolAmount",
+      "op": "callsub increasePoolAmount",
+      "stack_out": []
+    },
+    "407": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "408": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "409": {
+      "block": "__puya_arc4_router___registerRecipient_route@10",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%48#0"
+      ],
+      "stack_out": [
+        "tmp%48#0"
+      ]
+    },
+    "411": {
+      "op": "!",
+      "defined_out": [
+        "tmp%49#0"
+      ],
+      "stack_out": [
+        "tmp%49#0"
+      ]
+    },
+    "412": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "413": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%50#0"
+      ],
+      "stack_out": [
+        "tmp%50#0"
+      ]
+    },
+    "415": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "416": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "417": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "418": {
+      "block": "__puya_arc4_router___beforeRegisterRecipient_route@11",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%57#0"
+      ],
+      "stack_out": [
+        "tmp%57#0"
+      ]
+    },
+    "420": {
+      "op": "!",
+      "defined_out": [
+        "tmp%58#0"
+      ],
+      "stack_out": [
+        "tmp%58#0"
+      ]
+    },
+    "421": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "422": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%59#0"
+      ],
+      "stack_out": [
+        "tmp%59#0"
+      ]
+    },
+    "424": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "425": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "426": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "427": {
+      "block": "__puya_arc4_router___afterRegisterRecipient_route@12",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%66#0"
+      ],
+      "stack_out": [
+        "tmp%66#0"
+      ]
+    },
+    "429": {
+      "op": "!",
+      "defined_out": [
+        "tmp%67#0"
+      ],
+      "stack_out": [
+        "tmp%67#0"
+      ]
+    },
+    "430": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "431": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%68#0"
+      ],
+      "stack_out": [
+        "tmp%68#0"
+      ]
+    },
+    "433": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "434": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "435": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "436": {
+      "block": "__puya_arc4_router___register_Recipient_route@13",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%75#0"
+      ],
+      "stack_out": [
+        "tmp%75#0"
+      ]
+    },
+    "438": {
+      "op": "!",
+      "defined_out": [
+        "tmp%76#0"
+      ],
+      "stack_out": [
+        "tmp%76#0"
+      ]
+    },
+    "439": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "440": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%77#0"
+      ],
+      "stack_out": [
+        "tmp%77#0"
+      ]
+    },
+    "442": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "443": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%79#0"
+      ],
+      "stack_out": [
+        "tmp%79#0"
+      ]
+    },
+    "446": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%80#0"
+      ],
+      "stack_out": [
+        "tmp%80#0"
+      ]
+    },
+    "449": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%80#0",
+        "tmp%81#0"
+      ],
+      "stack_out": [
+        "tmp%80#0",
+        "tmp%81#0"
+      ]
+    },
+    "452": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%80#0",
+        "tmp%82#0"
+      ],
+      "stack_out": [
+        "tmp%80#0",
+        "tmp%82#0"
+      ]
+    },
+    "453": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%80#0",
+        "tmp%83#0"
+      ],
+      "stack_out": [
+        "tmp%80#0",
+        "tmp%83#0"
+      ]
+    },
+    "455": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.register_Recipient",
+      "op": "callsub register_Recipient",
+      "stack_out": []
+    },
+    "458": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "459": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "460": {
+      "block": "__puya_arc4_router___allocate_route@14",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%84#0"
+      ],
+      "stack_out": [
+        "tmp%84#0"
+      ]
+    },
+    "462": {
+      "op": "!",
+      "defined_out": [
+        "tmp%85#0"
+      ],
+      "stack_out": [
+        "tmp%85#0"
+      ]
+    },
+    "463": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "464": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%86#0"
+      ],
+      "stack_out": [
+        "tmp%86#0"
+      ]
+    },
+    "466": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "467": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "468": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "469": {
+      "block": "__puya_arc4_router___beforeAllocate_route@15",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%93#0"
+      ],
+      "stack_out": [
+        "tmp%93#0"
+      ]
+    },
+    "471": {
+      "op": "!",
+      "defined_out": [
+        "tmp%94#0"
+      ],
+      "stack_out": [
+        "tmp%94#0"
+      ]
+    },
+    "472": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "473": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%95#0"
+      ],
+      "stack_out": [
+        "tmp%95#0"
+      ]
+    },
+    "475": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "476": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "477": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "478": {
+      "block": "__puya_arc4_router___afterAllocate_route@16",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%102#0"
+      ],
+      "stack_out": [
+        "tmp%102#0"
+      ]
+    },
+    "480": {
+      "op": "!",
+      "defined_out": [
+        "tmp%103#0"
+      ],
+      "stack_out": [
+        "tmp%103#0"
+      ]
+    },
+    "481": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "482": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%104#0"
+      ],
+      "stack_out": [
+        "tmp%104#0"
+      ]
+    },
+    "484": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "485": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "486": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "487": {
+      "block": "__puya_arc4_router___Allocate_route@17",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%111#0"
+      ],
+      "stack_out": [
+        "tmp%111#0"
+      ]
+    },
+    "489": {
+      "op": "!",
+      "defined_out": [
+        "tmp%112#0"
+      ],
+      "stack_out": [
+        "tmp%112#0"
+      ]
+    },
+    "490": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "491": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%113#0"
+      ],
+      "stack_out": [
+        "tmp%113#0"
+      ]
+    },
+    "493": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "494": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%115#0"
+      ],
+      "stack_out": [
+        "tmp%115#0"
+      ]
+    },
+    "497": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%116#0"
+      ],
+      "stack_out": [
+        "tmp%116#0"
+      ]
+    },
+    "500": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%116#0",
+        "tmp%117#0"
+      ],
+      "stack_out": [
+        "tmp%116#0",
+        "tmp%117#0"
+      ]
+    },
+    "503": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%116#0",
+        "tmp%118#0"
+      ],
+      "stack_out": [
+        "tmp%116#0",
+        "tmp%118#0"
+      ]
+    },
+    "504": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%116#0",
+        "tmp%119#0"
+      ],
+      "stack_out": [
+        "tmp%116#0",
+        "tmp%119#0"
+      ]
+    },
+    "506": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.Allocate",
+      "op": "callsub Allocate",
+      "stack_out": []
+    },
+    "509": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "510": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "511": {
+      "block": "__puya_arc4_router___distribute_route@18",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%120#0"
+      ],
+      "stack_out": [
+        "tmp%120#0"
+      ]
+    },
+    "513": {
+      "op": "!",
+      "defined_out": [
+        "tmp%121#0"
+      ],
+      "stack_out": [
+        "tmp%121#0"
+      ]
+    },
+    "514": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "515": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%122#0"
+      ],
+      "stack_out": [
+        "tmp%122#0"
+      ]
+    },
+    "517": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "518": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%124#0"
+      ],
+      "stack_out": [
+        "tmp%124#0"
+      ]
+    },
+    "521": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%124#0",
+        "tmp%125#0"
+      ],
+      "stack_out": [
+        "tmp%124#0",
+        "tmp%125#0"
+      ]
+    },
+    "524": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%124#0",
+        "tmp%126#0"
+      ],
+      "stack_out": [
+        "tmp%124#0",
+        "tmp%126#0"
+      ]
+    },
+    "527": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%127#0"
+      ],
+      "stack_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%127#0"
+      ]
+    },
+    "530": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%128#0"
+      ],
+      "stack_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%128#0"
+      ]
+    },
+    "531": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%129#0"
+      ],
+      "stack_out": [
+        "tmp%124#0",
+        "tmp%126#0",
+        "tmp%129#0"
+      ]
+    },
+    "533": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.distribute",
+      "op": "callsub distribute",
+      "defined_out": [
+        "distribute%0#0"
+      ],
+      "stack_out": [
+        "distribute%0#0"
+      ]
+    },
+    "536": {
+      "op": "pop",
+      "stack_out": []
+    },
+    "537": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "538": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "539": {
+      "block": "__puya_arc4_router___beforeDistribute_route@19",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%130#0"
+      ],
+      "stack_out": [
+        "tmp%130#0"
+      ]
+    },
+    "541": {
+      "op": "!",
+      "defined_out": [
+        "tmp%131#0"
+      ],
+      "stack_out": [
+        "tmp%131#0"
+      ]
+    },
+    "542": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "543": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%132#0"
+      ],
+      "stack_out": [
+        "tmp%132#0"
+      ]
+    },
+    "545": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "546": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%134#0"
+      ],
+      "stack_out": [
+        "tmp%134#0"
+      ]
+    },
+    "549": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%134#0",
+        "tmp%135#0"
+      ],
+      "stack_out": [
+        "tmp%134#0",
+        "tmp%135#0"
+      ]
+    },
+    "552": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%134#0",
+        "tmp%136#0"
+      ],
+      "stack_out": [
+        "tmp%134#0",
+        "tmp%136#0"
+      ]
+    },
+    "555": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%137#0"
+      ],
+      "stack_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%137#0"
+      ]
+    },
+    "558": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%138#0"
+      ],
+      "stack_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%138#0"
+      ]
+    },
+    "559": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%139#0"
+      ],
+      "stack_out": [
+        "tmp%134#0",
+        "tmp%136#0",
+        "tmp%139#0"
+      ]
+    },
+    "561": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.beforeDistribute",
+      "op": "callsub beforeDistribute",
+      "defined_out": [
+        "beforeDistribute%0#0"
+      ],
+      "stack_out": [
+        "beforeDistribute%0#0"
+      ]
+    },
+    "564": {
+      "op": "pop",
+      "stack_out": []
+    },
+    "565": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "566": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "567": {
+      "block": "__puya_arc4_router___afterDistribute_route@20",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%140#0"
+      ],
+      "stack_out": [
+        "tmp%140#0"
+      ]
+    },
+    "569": {
+      "op": "!",
+      "defined_out": [
+        "tmp%141#0"
+      ],
+      "stack_out": [
+        "tmp%141#0"
+      ]
+    },
+    "570": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "571": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%142#0"
+      ],
+      "stack_out": [
+        "tmp%142#0"
+      ]
+    },
+    "573": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "574": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%144#0"
+      ],
+      "stack_out": [
+        "tmp%144#0"
+      ]
+    },
+    "577": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%144#0",
+        "tmp%145#0"
+      ],
+      "stack_out": [
+        "tmp%144#0",
+        "tmp%145#0"
+      ]
+    },
+    "580": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%144#0",
+        "tmp%146#0"
+      ],
+      "stack_out": [
+        "tmp%144#0",
+        "tmp%146#0"
+      ]
+    },
+    "583": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%147#0"
+      ],
+      "stack_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%147#0"
+      ]
+    },
+    "586": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%148#0"
+      ],
+      "stack_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%148#0"
+      ]
+    },
+    "587": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%149#0"
+      ],
+      "stack_out": [
+        "tmp%144#0",
+        "tmp%146#0",
+        "tmp%149#0"
+      ]
+    },
+    "589": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.afterDistribute",
+      "op": "callsub afterDistribute",
+      "defined_out": [
+        "afterDistribute%0#0"
+      ],
+      "stack_out": [
+        "afterDistribute%0#0"
+      ]
+    },
+    "592": {
+      "op": "pop",
+      "stack_out": []
+    },
+    "593": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "594": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "595": {
+      "block": "__puya_arc4_router___Distribute_route@21",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%150#0"
+      ],
+      "stack_out": [
+        "tmp%150#0"
+      ]
+    },
+    "597": {
+      "op": "!",
+      "defined_out": [
+        "tmp%151#0"
+      ],
+      "stack_out": [
+        "tmp%151#0"
+      ]
+    },
+    "598": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "599": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%152#0"
+      ],
+      "stack_out": [
+        "tmp%152#0"
+      ]
+    },
+    "601": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "602": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%154#0"
+      ],
+      "stack_out": [
+        "tmp%154#0"
+      ]
+    },
+    "605": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%154#0",
+        "tmp%155#0"
+      ],
+      "stack_out": [
+        "tmp%154#0",
+        "tmp%155#0"
+      ]
+    },
+    "608": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "tmp%154#0",
+        "tmp%156#0"
+      ],
+      "stack_out": [
+        "tmp%154#0",
+        "tmp%156#0"
+      ]
+    },
+    "611": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%157#0"
+      ],
+      "stack_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%157#0"
+      ]
+    },
+    "614": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%158#0"
+      ],
+      "stack_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%158#0"
+      ]
+    },
+    "615": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%159#0"
+      ],
+      "stack_out": [
+        "tmp%154#0",
+        "tmp%156#0",
+        "tmp%159#0"
+      ]
+    },
+    "617": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.Distribute",
+      "op": "callsub Distribute",
+      "stack_out": []
+    },
+    "620": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "621": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "622": {
+      "block": "__puya_arc4_router___bare_routing@24",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%160#0"
+      ],
+      "stack_out": [
+        "tmp%160#0"
+      ]
+    },
+    "624": {
+      "op": "bnz __puya_arc4_router___after_if_else@28",
+      "stack_out": []
+    },
+    "627": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%161#0"
+      ],
+      "stack_out": [
+        "tmp%161#0"
+      ]
+    },
+    "629": {
+      "op": "!",
+      "defined_out": [
+        "tmp%162#0"
+      ],
+      "stack_out": [
+        "tmp%162#0"
+      ]
+    },
+    "630": {
+      "op": "assert // is creating",
+      "stack_out": []
+    },
+    "631": {
+      "op": "intc_0 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "632": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "633": {
+      "block": "__puya_arc4_router___after_if_else@28",
+      "stack_in": [],
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "634": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "635": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.initializeVariables",
+      "params": {
+        "_alloContractId#0": "bytes",
+        "_strategyId#0": "bytes"
+      },
+      "block": "initializeVariables",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "638": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "641": {
+      "op": "bytec_2 // \"alloContractId\"",
+      "defined_out": [
+        "\"alloContractId\""
+      ],
+      "stack_out": [
+        "\"alloContractId\""
+      ]
+    },
+    "642": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"alloContractId\"",
+        "_alloContractId#0 (copy)"
+      ],
+      "stack_out": [
+        "\"alloContractId\"",
+        "_alloContractId#0 (copy)"
+      ]
+    },
+    "644": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "645": {
+      "op": "bytec 4 // \"strategyId\"",
+      "defined_out": [
+        "\"strategyId\""
+      ],
+      "stack_out": [
+        "\"strategyId\""
+      ]
+    },
+    "647": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"strategyId\"",
+        "_strategyId#0 (copy)"
+      ],
+      "stack_out": [
+        "\"strategyId\"",
+        "_strategyId#0 (copy)"
+      ]
+    },
+    "649": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "650": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "651": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "params": {},
+      "block": "__OnlyAllo",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "654": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "655": {
+      "op": "bytec_2 // \"alloContractId\"",
+      "defined_out": [
+        "\"alloContractId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"alloContractId\""
+      ]
+    },
+    "656": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "657": {
+      "op": "assert // check self.alloContractId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "658": {
+      "op": "txn Sender",
+      "defined_out": [
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ]
+    },
+    "660": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "661": {
+      "op": "assert // only allo contract can call this function",
+      "stack_out": []
+    },
+    "662": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "663": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.getAlloContractId",
+      "params": {},
+      "block": "getAlloContractId",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "666": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "667": {
+      "op": "bytec_2 // \"alloContractId\"",
+      "defined_out": [
+        "\"alloContractId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"alloContractId\""
+      ]
+    },
+    "668": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "669": {
+      "op": "assert // check self.alloContractId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "670": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "671": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolId",
+      "params": {},
+      "block": "getPoolId",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "674": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "675": {
+      "op": "bytec_0 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolId\""
+      ]
+    },
+    "676": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "677": {
+      "op": "assert // check self.poolId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "678": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "679": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.getStrategyId",
+      "params": {},
+      "block": "getStrategyId",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "682": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "683": {
+      "op": "bytec 4 // \"strategyId\"",
+      "defined_out": [
+        "\"strategyId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"strategyId\""
+      ]
+    },
+    "685": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "686": {
+      "op": "assert // check self.strategyId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "687": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "688": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolAmount",
+      "params": {},
+      "block": "getPoolAmount",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "691": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "692": {
+      "op": "bytec_3 // \"poolAmount\"",
+      "defined_out": [
+        "\"poolAmount\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolAmount\""
+      ]
+    },
+    "693": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "694": {
+      "op": "assert // check self.poolAmount exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "695": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "696": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.isPoolActive",
+      "params": {},
+      "block": "isPoolActive",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "699": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "700": {
+      "op": "bytec 5 // \"poolActive\"",
+      "defined_out": [
+        "\"poolActive\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolActive\""
+      ]
+    },
+    "702": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "703": {
+      "op": "assert // check self.poolActive exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "704": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "705": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.baseStrategy_init",
+      "params": {
+        "_poolId#0": "uint64"
+      },
+      "block": "baseStrategy_init",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "708": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "711": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "712": {
+      "op": "bytec_0 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolId\""
+      ]
+    },
+    "713": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "714": {
+      "op": "assert // check self.poolId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "715": {
+      "op": "!",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "716": {
+      "op": "assert // pool already initialized",
+      "stack_out": []
+    },
+    "717": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "_poolId#0 (copy)"
+      ],
+      "stack_out": [
+        "_poolId#0 (copy)"
+      ]
+    },
+    "719": {
+      "op": "assert // invalid pool id",
+      "stack_out": []
+    },
+    "720": {
+      "op": "bytec_0 // \"poolId\"",
+      "stack_out": [
+        "\"poolId\""
+      ]
+    },
+    "721": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "\"poolId\"",
+        "_poolId#0 (copy)"
+      ]
+    },
+    "723": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "724": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "725": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.increasePoolAmount",
+      "params": {
+        "_amount#0": "uint64"
+      },
+      "block": "increasePoolAmount",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "728": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "731": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "732": {
+      "op": "bytec_3 // \"poolAmount\"",
+      "defined_out": [
+        "\"poolAmount\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolAmount\""
+      ]
+    },
+    "733": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "734": {
+      "op": "assert // check self.poolAmount exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "735": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "_amount#0 (copy)",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "_amount#0 (copy)"
+      ]
+    },
+    "737": {
+      "op": "+",
+      "defined_out": [
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "new_state_value%0#0"
+      ]
+    },
+    "738": {
+      "op": "bytec_3 // \"poolAmount\"",
+      "stack_out": [
+        "new_state_value%0#0",
+        "\"poolAmount\""
+      ]
+    },
+    "739": {
+      "op": "swap",
+      "stack_out": [
+        "\"poolAmount\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "740": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "741": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "742": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.register_Recipient",
+      "params": {
+        "_data#0": "bytes",
+        "_sender#0": "bytes"
+      },
+      "block": "register_Recipient",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "745": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "748": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyInitialized",
+      "op": "callsub __OnlyInitialized"
+    },
+    "751": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "752": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyInitialized",
+      "params": {},
+      "block": "__OnlyInitialized",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "755": {
+      "op": "intc_1 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "756": {
+      "op": "bytec_0 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"poolId\""
+      ]
+    },
+    "757": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "758": {
+      "op": "assert // check self.poolId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "759": {
+      "op": "assert // pool is not initialized",
+      "stack_out": []
+    },
+    "760": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "761": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.Allocate",
+      "params": {
+        "_data#0": "bytes",
+        "_sender#0": "bytes"
+      },
+      "block": "Allocate",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "764": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "767": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "768": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.distribute",
+      "params": {
+        "_recipientIds#0": "bytes",
+        "_data#0": "bytes",
+        "_sender#0": "bytes"
+      },
+      "block": "distribute",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "771": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "_recipientIds#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "773": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "774": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.beforeDistribute",
+      "params": {
+        "_recipientIds#0": "bytes",
+        "_data#0": "bytes",
+        "sender#0": "bytes"
+      },
+      "block": "beforeDistribute",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "777": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "_recipientIds#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "779": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "780": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.afterDistribute",
+      "params": {
+        "_recipientIds#0": "bytes",
+        "_data#0": "bytes",
+        "sender#0": "bytes"
+      },
+      "block": "afterDistribute",
+      "stack_in": [],
+      "op": "proto 3 1"
+    },
+    "783": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "_recipientIds#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "785": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "786": {
+      "subroutine": "smart_contracts.strategies.baseStrategy.BaseStrategy.Distribute",
+      "params": {
+        "_recipientIds#0": "bytes",
+        "_data#0": "bytes",
+        "_sender#0": "bytes"
+      },
+      "block": "Distribute",
+      "stack_in": [],
+      "op": "proto 3 0"
+    },
+    "789": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo",
+      "op": "callsub __OnlyAllo"
+    },
+    "792": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyInitialized",
+      "op": "callsub __OnlyInitialized"
+    },
+    "795": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "_recipientIds#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "797": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "_data#0 (copy)",
+        "_recipientIds#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)"
+      ]
+    },
+    "799": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "_data#0 (copy)",
+        "_recipientIds#0 (copy)",
+        "_sender#0 (copy)"
+      ],
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)",
+        "_sender#0 (copy)"
+      ]
+    },
+    "801": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.beforeDistribute",
+      "op": "callsub beforeDistribute",
+      "defined_out": [
+        "_recipientIds#0"
+      ],
+      "stack_out": [
+        "_recipientIds#0"
+      ]
+    },
+    "804": {
+      "op": "dup"
+    },
+    "805": {
+      "op": "frame_bury -3",
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "807": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)"
+      ]
+    },
+    "809": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)",
+        "_sender#0 (copy)"
+      ]
+    },
+    "811": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.distribute",
+      "op": "callsub distribute",
+      "stack_out": [
+        "_recipientIds#0"
+      ]
+    },
+    "814": {
+      "op": "dup"
+    },
+    "815": {
+      "op": "frame_bury -3",
+      "stack_out": [
+        "_recipientIds#0 (copy)"
+      ]
+    },
+    "817": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)"
+      ]
+    },
+    "819": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "_recipientIds#0 (copy)",
+        "_data#0 (copy)",
+        "_sender#0 (copy)"
+      ]
+    },
+    "821": {
+      "callsub": "smart_contracts.strategies.baseStrategy.BaseStrategy.afterDistribute",
+      "op": "callsub afterDistribute",
+      "stack_out": [
+        "_recipientIds#0"
+      ]
+    },
+    "824": {
+      "op": "frame_bury -3",
+      "stack_out": []
+    },
+    "826": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}

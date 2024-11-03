@@ -1,0 +1,703 @@
+#pragma version 10
+
+smart_contracts.strategies.baseStrategy.BaseStrategy.approval_program:
+    intcblock 1 0
+    bytecblock "poolId" 0x151f7c75 "alloContractId" "poolAmount" "strategyId" "poolActive"
+    txn ApplicationID
+    bnz main_after_if_else@2
+    callsub __init__
+
+main_after_if_else@2:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.__init__() -> void:
+__init__:
+    // baseStrategy.py:11
+    // def __init__(self) -> None:
+    proto 0 0
+    // baseStrategy.py:12
+    // self.alloContractId = Address()
+    bytec_2 // "alloContractId"
+    global ZeroAddress
+    app_global_put
+    // baseStrategy.py:13
+    // self.strategyId = String()
+    bytec 4 // "strategyId"
+    pushbytes ""
+    app_global_put
+    // baseStrategy.py:14
+    // self.poolActive: bool = False
+    bytec 5 // "poolActive"
+    intc_1 // 0
+    app_global_put
+    // baseStrategy.py:15
+    // self.poolId = UInt64(0)
+    bytec_0 // "poolId"
+    intc_1 // 0
+    app_global_put
+    // baseStrategy.py:16
+    // self.poolAmount = UInt64(0)
+    bytec_3 // "poolAmount"
+    intc_1 // 0
+    app_global_put
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@24
+    pushbytess 0x73e8cb16 0x08534d4e 0x6df65c82 0x66bf8410 0x06ecfaf7 0xbb01eab2 0x85c70fcb 0xb78d5e3b 0xbd7d0e80 0x7a5c210b 0x2ca276c6 0x4203ec19 0x3cad8fd7 0xc6d2fc13 0xde0d0b54 0x8cb09f7c 0xe08edf85 0x03ab7495 0xd3739bd6 0xfc5e7dcb // method "initializeVariables(address,string)void", method "getAlloContractId()address", method "getPoolId()uint64", method "getStrategyId()string", method "getPoolAmount()uint64", method "isPoolActive()bool", method "baseStrategy_init(uint64)void", method "increasePoolAmount(uint64)void", method "registerRecipient(byte[],account)void", method "beforeRegisterRecipient(byte[],account)void", method "afterRegisterRecipient(byte[],account)void", method "register_Recipient(byte[],account)void", method "allocate(byte[],account)void", method "beforeAllocate(byte[],account)void", method "afterAllocate(byte[],account)void", method "Allocate(byte[],account)void", method "distribute(address[],byte[],account)void", method "beforeDistribute(address[],byte[],account)void", method "afterDistribute(address[],byte[],account)void", method "Distribute(address[],byte[],account)void"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___initializeVariables_route@2 __puya_arc4_router___getAlloContractId_route@3 __puya_arc4_router___getPoolId_route@4 __puya_arc4_router___getStrategyId_route@5 __puya_arc4_router___getPoolAmount_route@6 __puya_arc4_router___isPoolActive_route@7 __puya_arc4_router___baseStrategy_init_route@8 __puya_arc4_router___increasePoolAmount_route@9 __puya_arc4_router___registerRecipient_route@10 __puya_arc4_router___beforeRegisterRecipient_route@11 __puya_arc4_router___afterRegisterRecipient_route@12 __puya_arc4_router___register_Recipient_route@13 __puya_arc4_router___allocate_route@14 __puya_arc4_router___beforeAllocate_route@15 __puya_arc4_router___afterAllocate_route@16 __puya_arc4_router___Allocate_route@17 __puya_arc4_router___distribute_route@18 __puya_arc4_router___beforeDistribute_route@19 __puya_arc4_router___afterDistribute_route@20 __puya_arc4_router___Distribute_route@21
+    intc_1 // 0
+    retsub
+
+__puya_arc4_router___initializeVariables_route@2:
+    // baseStrategy.py:18
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    extract 2 0
+    // baseStrategy.py:18
+    // @arc4.abimethod()
+    callsub initializeVariables
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___getAlloContractId_route@3:
+    // baseStrategy.py:32
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getAlloContractId
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___getPoolId_route@4:
+    // baseStrategy.py:36
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getPoolId
+    itob
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___getStrategyId_route@5:
+    // baseStrategy.py:40
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getStrategyId
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___getPoolAmount_route@6:
+    // baseStrategy.py:44
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getPoolAmount
+    itob
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___isPoolActive_route@7:
+    // baseStrategy.py:48
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub isPoolActive
+    pushbytes 0x00
+    intc_1 // 0
+    uncover 2
+    setbit
+    bytec_1 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___baseStrategy_init_route@8:
+    // baseStrategy.py:52
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // baseStrategy.py:52
+    // @arc4.abimethod()
+    callsub baseStrategy_init
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___increasePoolAmount_route@9:
+    // baseStrategy.py:59
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // baseStrategy.py:59
+    // @arc4.abimethod()
+    callsub increasePoolAmount
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___registerRecipient_route@10:
+    // baseStrategy.py:64-65
+    //     # receipient register
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___beforeRegisterRecipient_route@11:
+    // baseStrategy.py:69
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___afterRegisterRecipient_route@12:
+    // baseStrategy.py:73
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___register_Recipient_route@13:
+    // baseStrategy.py:77
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // baseStrategy.py:77
+    // @arc4.abimethod()
+    callsub register_Recipient
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___allocate_route@14:
+    // baseStrategy.py:85-86
+    // # allocate
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___beforeAllocate_route@15:
+    // baseStrategy.py:90
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___afterAllocate_route@16:
+    // baseStrategy.py:94
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___Allocate_route@17:
+    // baseStrategy.py:98
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // baseStrategy.py:98
+    // @arc4.abimethod()
+    callsub Allocate
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___distribute_route@18:
+    // baseStrategy.py:105-106
+    // # distribute
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txnas Accounts
+    // baseStrategy.py:105-106
+    // # distribute
+    // @arc4.abimethod()
+    callsub distribute
+    pop
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___beforeDistribute_route@19:
+    // baseStrategy.py:110
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txnas Accounts
+    // baseStrategy.py:110
+    // @arc4.abimethod()
+    callsub beforeDistribute
+    pop
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___afterDistribute_route@20:
+    // baseStrategy.py:114
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txnas Accounts
+    // baseStrategy.py:114
+    // @arc4.abimethod()
+    callsub afterDistribute
+    pop
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___Distribute_route@21:
+    // baseStrategy.py:118
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    extract 2 0
+    txna ApplicationArgs 3
+    btoi
+    txnas Accounts
+    // baseStrategy.py:118
+    // @arc4.abimethod()
+    callsub Distribute
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___bare_routing@24:
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@28
+    txn ApplicationID
+    !
+    assert // is creating
+    intc_0 // 1
+    retsub
+
+__puya_arc4_router___after_if_else@28:
+    // baseStrategy.py:10
+    // class BaseStrategy(ARC4Contract):
+    intc_1 // 0
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.initializeVariables(_alloContractId: bytes, _strategyId: bytes) -> void:
+initializeVariables:
+    // baseStrategy.py:18-19
+    // @arc4.abimethod()
+    // def initializeVariables(self, _alloContractId: Address, _strategyId: String) -> None:
+    proto 2 0
+    // baseStrategy.py:20
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    // baseStrategy.py:21
+    // self.alloContractId = _alloContractId
+    bytec_2 // "alloContractId"
+    frame_dig -2
+    app_global_put
+    // baseStrategy.py:22
+    // self.strategyId = _strategyId
+    bytec 4 // "strategyId"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyAllo() -> void:
+__OnlyAllo:
+    // baseStrategy.py:24-25
+    // @algopy.subroutine
+    // def __OnlyAllo(self) -> None :
+    proto 0 0
+    // baseStrategy.py:26
+    // assert algopy.Txn.sender == self.alloContractId, "only allo contract can call this function"
+    intc_1 // 0
+    bytec_2 // "alloContractId"
+    app_global_get_ex
+    assert // check self.alloContractId exists
+    txn Sender
+    ==
+    assert // only allo contract can call this function
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.getAlloContractId() -> bytes:
+getAlloContractId:
+    // baseStrategy.py:32-33
+    // @arc4.abimethod()
+    // def getAlloContractId(self) -> Address :
+    proto 0 1
+    // baseStrategy.py:34
+    // return self.alloContractId
+    intc_1 // 0
+    bytec_2 // "alloContractId"
+    app_global_get_ex
+    assert // check self.alloContractId exists
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolId() -> uint64:
+getPoolId:
+    // baseStrategy.py:36-37
+    // @arc4.abimethod()
+    // def getPoolId(self) -> UInt64 :
+    proto 0 1
+    // baseStrategy.py:38
+    // return self.poolId
+    intc_1 // 0
+    bytec_0 // "poolId"
+    app_global_get_ex
+    assert // check self.poolId exists
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.getStrategyId() -> bytes:
+getStrategyId:
+    // baseStrategy.py:40-41
+    // @arc4.abimethod()
+    // def getStrategyId(self) -> String :
+    proto 0 1
+    // baseStrategy.py:42
+    // return self.strategyId
+    intc_1 // 0
+    bytec 4 // "strategyId"
+    app_global_get_ex
+    assert // check self.strategyId exists
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.getPoolAmount() -> uint64:
+getPoolAmount:
+    // baseStrategy.py:44-45
+    // @arc4.abimethod()
+    // def getPoolAmount(self) -> UInt64 :
+    proto 0 1
+    // baseStrategy.py:46
+    // return self.poolAmount
+    intc_1 // 0
+    bytec_3 // "poolAmount"
+    app_global_get_ex
+    assert // check self.poolAmount exists
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.isPoolActive() -> uint64:
+isPoolActive:
+    // baseStrategy.py:48-49
+    // @arc4.abimethod()
+    // def isPoolActive(self) -> bool :
+    proto 0 1
+    // baseStrategy.py:50
+    // return self.poolActive
+    intc_1 // 0
+    bytec 5 // "poolActive"
+    app_global_get_ex
+    assert // check self.poolActive exists
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.baseStrategy_init(_poolId: uint64) -> void:
+baseStrategy_init:
+    // baseStrategy.py:52-53
+    // @arc4.abimethod()
+    // def baseStrategy_init(self, _poolId: UInt64) -> None :
+    proto 1 0
+    // baseStrategy.py:54
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    // baseStrategy.py:55
+    // assert self.poolId == 0, "pool already initialized"
+    intc_1 // 0
+    bytec_0 // "poolId"
+    app_global_get_ex
+    assert // check self.poolId exists
+    !
+    assert // pool already initialized
+    // baseStrategy.py:56
+    // assert _poolId != 0, "invalid pool id"
+    frame_dig -1
+    assert // invalid pool id
+    // baseStrategy.py:57
+    // self.poolId = _poolId
+    bytec_0 // "poolId"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.increasePoolAmount(_amount: uint64) -> void:
+increasePoolAmount:
+    // baseStrategy.py:59-60
+    // @arc4.abimethod()
+    // def increasePoolAmount(self, _amount: UInt64) -> None :
+    proto 1 0
+    // baseStrategy.py:61
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    // baseStrategy.py:62
+    // self.poolAmount += _amount
+    intc_1 // 0
+    bytec_3 // "poolAmount"
+    app_global_get_ex
+    assert // check self.poolAmount exists
+    frame_dig -1
+    +
+    bytec_3 // "poolAmount"
+    swap
+    app_global_put
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.register_Recipient(_data: bytes, _sender: bytes) -> void:
+register_Recipient:
+    // baseStrategy.py:77-78
+    // @arc4.abimethod()
+    // def register_Recipient(self, _data: Bytes, _sender: Account) -> None :
+    proto 2 0
+    // baseStrategy.py:79
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    // baseStrategy.py:80
+    // self.__OnlyInitialized()
+    callsub __OnlyInitialized
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.__OnlyInitialized() -> void:
+__OnlyInitialized:
+    // baseStrategy.py:28-29
+    // @algopy.subroutine
+    // def __OnlyInitialized(self) -> None :
+    proto 0 0
+    // baseStrategy.py:30
+    // assert self.poolId !=0, "pool is not initialized"
+    intc_1 // 0
+    bytec_0 // "poolId"
+    app_global_get_ex
+    assert // check self.poolId exists
+    assert // pool is not initialized
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.Allocate(_data: bytes, _sender: bytes) -> void:
+Allocate:
+    // baseStrategy.py:98-99
+    // @arc4.abimethod()
+    // def Allocate(self, _data: Bytes, _sender: Account) -> None:
+    proto 2 0
+    // baseStrategy.py:100
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.distribute(_recipientIds: bytes, _data: bytes, _sender: bytes) -> bytes:
+distribute:
+    // baseStrategy.py:105-107
+    // # distribute
+    // @arc4.abimethod()
+    // def distribute(self, _recipientIds: DynamicArray[Address], _data: Bytes, _sender: Account) -> None:
+    proto 3 1
+    frame_dig -3
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.beforeDistribute(_recipientIds: bytes, _data: bytes, sender: bytes) -> bytes:
+beforeDistribute:
+    // baseStrategy.py:110-111
+    // @arc4.abimethod()
+    // def beforeDistribute(self, _recipientIds: DynamicArray[Address], _data: Bytes, sender: Account) -> None:
+    proto 3 1
+    frame_dig -3
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.afterDistribute(_recipientIds: bytes, _data: bytes, sender: bytes) -> bytes:
+afterDistribute:
+    // baseStrategy.py:114-115
+    // @arc4.abimethod()
+    // def afterDistribute(self, _recipientIds: DynamicArray[Address], _data: Bytes, sender: Account) -> None:
+    proto 3 1
+    frame_dig -3
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.BaseStrategy.Distribute(_recipientIds: bytes, _data: bytes, _sender: bytes) -> void:
+Distribute:
+    // baseStrategy.py:118-119
+    // @arc4.abimethod()
+    // def Distribute(self, _recipientIds: DynamicArray[Address], _data: Bytes, _sender: Account) -> None:
+    proto 3 0
+    // baseStrategy.py:120
+    // self.__OnlyAllo()
+    callsub __OnlyAllo
+    // baseStrategy.py:121
+    // self.__OnlyInitialized()
+    callsub __OnlyInitialized
+    // baseStrategy.py:122
+    // self.beforeDistribute(_recipientIds, _data, _sender)
+    frame_dig -3
+    frame_dig -2
+    frame_dig -1
+    callsub beforeDistribute
+    dup
+    frame_bury -3
+    // baseStrategy.py:123
+    // self.distribute(_recipientIds, _data, _sender)
+    frame_dig -2
+    frame_dig -1
+    callsub distribute
+    dup
+    frame_bury -3
+    // baseStrategy.py:124
+    // self.afterDistribute(_recipientIds,_data, _sender)
+    frame_dig -2
+    frame_dig -1
+    callsub afterDistribute
+    frame_bury -3
+    retsub
