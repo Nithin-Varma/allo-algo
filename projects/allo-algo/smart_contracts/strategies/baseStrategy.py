@@ -8,12 +8,18 @@ class PayoutSummary(arc4.Struct):
     amount: arc4.UInt64
 
 class BaseStrategy(ARC4Contract):
-    def __init__(self, _alloContractId: Address, strategyId:String) -> None:
-        self.alloContractId = _alloContractId
-        self.strategyId = strategyId
+    def __init__(self) -> None:
+        self.alloContractId = Address()
+        self.strategyId = String()
         self.poolActive: bool = False
         self.poolId = UInt64(0)
         self.poolAmount = UInt64(0)
+
+    @arc4.abimethod()
+    def initializeVariables(self, _alloContractId: Address, _strategyId: String) -> None:
+        self.__OnlyAllo()
+        self.alloContractId = _alloContractId
+        self.strategyId = _strategyId
 
     @algopy.subroutine
     def __OnlyAllo(self) -> None :
