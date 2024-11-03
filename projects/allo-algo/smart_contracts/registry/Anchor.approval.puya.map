@@ -1,0 +1,1044 @@
+{
+  "version": 3,
+  "sources": [
+    "contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;AAUA;;;AACQ;AAAa;;AAAb;;AAFR;;;AAAA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;AAAA;AAAA;AAGK;;AAAA;AAAA;AAAA;;AAAA;AAHL;;;AAAA;AAAA;;AAGK;;;AAAA;AAAA;AAWA;;AAAA;AAAA;AAAA;;AAAA;AAdL;;;AAAA;AAAA;;AAAA;;;AAAA;AAcK;;;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAlBL;;;AAAA;AAAA;;AAAA;;;AAAA;AAAA;;AAAA;;;AAAA;AAkBK;;;AAAA;AAAA;AAIA;;AAAA;AAAA;AAAA;;AAAA;AAtBL;;;AAAA;AAAA;;AAsBK;;;AAAA;AAAA;AAtBL;;AAAA;;;;;;;;;AAAA;AAAA;AAGA;;;AAGY;AAAA;AAAA;AAAA;AAAc;;AAAd;AADJ;AAGA;AAAA;;AAAA;;AAMR;;;AAEQ;;;AACA;;;;;;;;;AAAA;;;AAAA;;;AAAA;;AARR;;;AAGY;;AAAqB;AAAA;AAAA;AAAA;AAArB;AADJ;;AAOR;;;AAEQ;;;AACA;;;;;;;;;;;;;AAAA;;;AAAA;;;AAAA;;AACR;;;AAEQ;;;AACA;AAAyC;;AAAiD;;;;;;;;;AAA1F;;;AAAA;;;AAAA;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.approval_program",
+      "params": {},
+      "block": "smart_contracts.registry.contract.Anchor.approval_program",
+      "stack_in": [],
+      "op": "intcblock 0 1 4"
+    },
+    "6": {
+      "op": "bytecblock \"owner\""
+    },
+    "14": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "16": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "19": {
+      "callsub": "smart_contracts.registry.contract.Anchor.__init__",
+      "op": "callsub __init__"
+    },
+    "22": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "callsub": "smart_contracts.registry.contract.Anchor.__puya_arc4_router__",
+      "op": "callsub __puya_arc4_router__",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "25": {
+      "op": "return",
+      "stack_out": []
+    },
+    "26": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.__init__",
+      "params": {},
+      "block": "__init__",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "29": {
+      "op": "bytec_0 // \"owner\""
+    },
+    "30": {
+      "op": "global ZeroAddress",
+      "defined_out": [
+        "\"owner\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"owner\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "32": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "33": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "34": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.__puya_arc4_router__",
+      "params": {},
+      "block": "__puya_arc4_router__",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "37": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "39": {
+      "op": "bz __puya_arc4_router___bare_routing@8",
+      "stack_out": []
+    },
+    "42": {
+      "op": "pushbytess 0x854a518d 0x3bd7ce2c 0x0fd99870 0x2826b202 // method \"create(account)void\", method \"transferAlgo(account,uint64)void\", method \"transferAsset(account,asset,uint64)void\", method \"opt_into_asset(asset)void\""
+    },
+    "64": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(create(account)void)",
+        "Method(opt_into_asset(asset)void)",
+        "Method(transferAlgo(account,uint64)void)",
+        "Method(transferAsset(account,asset,uint64)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(create(account)void)",
+        "Method(transferAlgo(account,uint64)void)",
+        "Method(transferAsset(account,asset,uint64)void)",
+        "Method(opt_into_asset(asset)void)",
+        "tmp%2#0"
+      ]
+    },
+    "67": {
+      "op": "match __puya_arc4_router___create_route@2 __puya_arc4_router___transferAlgo_route@3 __puya_arc4_router___transferAsset_route@4 __puya_arc4_router___opt_into_asset_route@5",
+      "stack_out": []
+    },
+    "77": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "78": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "79": {
+      "block": "__puya_arc4_router___create_route@2",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "81": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "82": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "83": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "85": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "86": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "89": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "90": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "92": {
+      "callsub": "smart_contracts.registry.contract.Anchor.create",
+      "op": "callsub create",
+      "stack_out": []
+    },
+    "95": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "96": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "97": {
+      "block": "__puya_arc4_router___transferAlgo_route@3",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "99": {
+      "op": "!",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "100": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "101": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "103": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "104": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "tmp%14#0"
+      ]
+    },
+    "107": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "tmp%15#0"
+      ]
+    },
+    "108": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "tmp%16#0"
+      ]
+    },
+    "110": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%16#0",
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "tmp%16#0",
+        "tmp%17#0"
+      ]
+    },
+    "113": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%16#0",
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "tmp%16#0",
+        "tmp%18#0"
+      ]
+    },
+    "114": {
+      "callsub": "smart_contracts.registry.contract.Anchor.transferAlgo",
+      "op": "callsub transferAlgo",
+      "stack_out": []
+    },
+    "117": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "118": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "119": {
+      "block": "__puya_arc4_router___transferAsset_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "tmp%19#0"
+      ]
+    },
+    "121": {
+      "op": "!",
+      "defined_out": [
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "tmp%20#0"
+      ]
+    },
+    "122": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "123": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "tmp%21#0"
+      ]
+    },
+    "125": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "126": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "tmp%23#0"
+      ]
+    },
+    "129": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%24#0"
+      ],
+      "stack_out": [
+        "tmp%24#0"
+      ]
+    },
+    "130": {
+      "op": "txnas Accounts",
+      "defined_out": [
+        "tmp%25#0"
+      ],
+      "stack_out": [
+        "tmp%25#0"
+      ]
+    },
+    "132": {
+      "op": "txna ApplicationArgs 2",
+      "defined_out": [
+        "tmp%25#0",
+        "tmp%26#0"
+      ],
+      "stack_out": [
+        "tmp%25#0",
+        "tmp%26#0"
+      ]
+    },
+    "135": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%25#0",
+        "tmp%27#0"
+      ],
+      "stack_out": [
+        "tmp%25#0",
+        "tmp%27#0"
+      ]
+    },
+    "136": {
+      "op": "txnas Assets",
+      "defined_out": [
+        "tmp%25#0",
+        "tmp%28#0"
+      ],
+      "stack_out": [
+        "tmp%25#0",
+        "tmp%28#0"
+      ]
+    },
+    "138": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%25#0",
+        "tmp%28#0",
+        "tmp%29#0"
+      ],
+      "stack_out": [
+        "tmp%25#0",
+        "tmp%28#0",
+        "tmp%29#0"
+      ]
+    },
+    "141": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%25#0",
+        "tmp%28#0",
+        "tmp%30#0"
+      ],
+      "stack_out": [
+        "tmp%25#0",
+        "tmp%28#0",
+        "tmp%30#0"
+      ]
+    },
+    "142": {
+      "callsub": "smart_contracts.registry.contract.Anchor.transferAsset",
+      "op": "callsub transferAsset",
+      "stack_out": []
+    },
+    "145": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "146": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "147": {
+      "block": "__puya_arc4_router___opt_into_asset_route@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%31#0"
+      ],
+      "stack_out": [
+        "tmp%31#0"
+      ]
+    },
+    "149": {
+      "op": "!",
+      "defined_out": [
+        "tmp%32#0"
+      ],
+      "stack_out": [
+        "tmp%32#0"
+      ]
+    },
+    "150": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "151": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%33#0"
+      ],
+      "stack_out": [
+        "tmp%33#0"
+      ]
+    },
+    "153": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "154": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%35#0"
+      ],
+      "stack_out": [
+        "tmp%35#0"
+      ]
+    },
+    "157": {
+      "op": "btoi",
+      "defined_out": [
+        "tmp%36#0"
+      ],
+      "stack_out": [
+        "tmp%36#0"
+      ]
+    },
+    "158": {
+      "op": "txnas Assets",
+      "defined_out": [
+        "tmp%37#0"
+      ],
+      "stack_out": [
+        "tmp%37#0"
+      ]
+    },
+    "160": {
+      "callsub": "smart_contracts.registry.contract.Anchor.opt_into_asset",
+      "op": "callsub opt_into_asset",
+      "stack_out": []
+    },
+    "163": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "164": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "165": {
+      "block": "__puya_arc4_router___bare_routing@8",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%38#0"
+      ],
+      "stack_out": [
+        "tmp%38#0"
+      ]
+    },
+    "167": {
+      "op": "bnz __puya_arc4_router___after_if_else@12",
+      "stack_out": []
+    },
+    "170": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%39#0"
+      ],
+      "stack_out": [
+        "tmp%39#0"
+      ]
+    },
+    "172": {
+      "op": "!",
+      "defined_out": [
+        "tmp%40#0"
+      ],
+      "stack_out": [
+        "tmp%40#0"
+      ]
+    },
+    "173": {
+      "op": "assert // is creating",
+      "stack_out": []
+    },
+    "174": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "175": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "176": {
+      "block": "__puya_arc4_router___after_if_else@12",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "177": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "178": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.create",
+      "params": {
+        "owner#0": "bytes"
+      },
+      "block": "create",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "181": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "182": {
+      "op": "bytec_0 // \"owner\"",
+      "defined_out": [
+        "\"owner\"",
+        "0"
+      ],
+      "stack_out": [
+        "0",
+        "\"owner\""
+      ]
+    },
+    "183": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "184": {
+      "op": "assert // check self.owner exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "185": {
+      "op": "global ZeroAddress",
+      "defined_out": [
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ]
+    },
+    "187": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "188": {
+      "op": "assert // Contract has already been initialized",
+      "stack_out": []
+    },
+    "189": {
+      "op": "bytec_0 // \"owner\"",
+      "stack_out": [
+        "\"owner\""
+      ]
+    },
+    "190": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"owner\"",
+        "owner#0 (copy)"
+      ],
+      "stack_out": [
+        "\"owner\"",
+        "owner#0 (copy)"
+      ]
+    },
+    "192": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "193": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "194": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.transferAlgo",
+      "params": {
+        "receiver#0": "bytes",
+        "amount#0": "uint64"
+      },
+      "block": "transferAlgo",
+      "stack_in": [],
+      "op": "proto 2 0"
+    },
+    "197": {
+      "callsub": "smart_contracts.registry.contract.Anchor._onlyOwner",
+      "op": "callsub _onlyOwner"
+    },
+    "200": {
+      "op": "itxn_begin"
+    },
+    "201": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)"
+      ],
+      "stack_out": [
+        "amount#0 (copy)"
+      ]
+    },
+    "203": {
+      "op": "itxn_field Amount",
+      "stack_out": []
+    },
+    "205": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "receiver#0 (copy)"
+      ],
+      "stack_out": [
+        "receiver#0 (copy)"
+      ]
+    },
+    "207": {
+      "op": "itxn_field Receiver",
+      "stack_out": []
+    },
+    "209": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "pay"
+      ],
+      "stack_out": [
+        "pay"
+      ]
+    },
+    "210": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "212": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "213": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "215": {
+      "op": "itxn_submit"
+    },
+    "216": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "217": {
+      "subroutine": "smart_contracts.registry.contract.Anchor._onlyOwner",
+      "params": {},
+      "block": "_onlyOwner",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "220": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "222": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0"
+      ]
+    },
+    "223": {
+      "op": "bytec_0 // \"owner\"",
+      "defined_out": [
+        "\"owner\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "0",
+        "\"owner\""
+      ]
+    },
+    "224": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "225": {
+      "op": "assert // check self.owner exists",
+      "stack_out": [
+        "tmp%0#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "226": {
+      "op": "==",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "227": {
+      "op": "assert // Only the account set in global_state.owner may call this method",
+      "stack_out": []
+    },
+    "228": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "229": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.transferAsset",
+      "params": {
+        "receiver#0": "bytes",
+        "asset#0": "uint64",
+        "amount#0": "uint64"
+      },
+      "block": "transferAsset",
+      "stack_in": [],
+      "op": "proto 3 0"
+    },
+    "232": {
+      "callsub": "smart_contracts.registry.contract.Anchor._onlyOwner",
+      "op": "callsub _onlyOwner"
+    },
+    "235": {
+      "op": "itxn_begin"
+    },
+    "236": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "amount#0 (copy)"
+      ],
+      "stack_out": [
+        "amount#0 (copy)"
+      ]
+    },
+    "238": {
+      "op": "itxn_field AssetAmount",
+      "stack_out": []
+    },
+    "240": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "asset#0 (copy)"
+      ],
+      "stack_out": [
+        "asset#0 (copy)"
+      ]
+    },
+    "242": {
+      "op": "itxn_field XferAsset",
+      "stack_out": []
+    },
+    "244": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "receiver#0 (copy)"
+      ],
+      "stack_out": [
+        "receiver#0 (copy)"
+      ]
+    },
+    "246": {
+      "op": "itxn_field AssetReceiver",
+      "stack_out": []
+    },
+    "248": {
+      "op": "intc_2 // axfer",
+      "defined_out": [
+        "axfer"
+      ],
+      "stack_out": [
+        "axfer"
+      ]
+    },
+    "249": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "251": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "252": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "254": {
+      "op": "itxn_submit"
+    },
+    "255": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "256": {
+      "subroutine": "smart_contracts.registry.contract.Anchor.opt_into_asset",
+      "params": {
+        "asset#0": "uint64"
+      },
+      "block": "opt_into_asset",
+      "stack_in": [],
+      "op": "proto 1 0"
+    },
+    "259": {
+      "callsub": "smart_contracts.registry.contract.Anchor._onlyOwner",
+      "op": "callsub _onlyOwner"
+    },
+    "262": {
+      "op": "itxn_begin"
+    },
+    "263": {
+      "op": "txn Sender",
+      "defined_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ]
+    },
+    "265": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0",
+        "0"
+      ]
+    },
+    "266": {
+      "op": "itxn_field AssetAmount",
+      "stack_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ]
+    },
+    "268": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "asset#0 (copy)",
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ],
+      "stack_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0",
+        "asset#0 (copy)"
+      ]
+    },
+    "270": {
+      "op": "itxn_field XferAsset",
+      "stack_out": [
+        "inner_txn_params%0%%param_AssetReceiver_idx_0#0"
+      ]
+    },
+    "272": {
+      "op": "itxn_field AssetReceiver",
+      "stack_out": []
+    },
+    "274": {
+      "op": "intc_2 // axfer",
+      "defined_out": [
+        "axfer"
+      ],
+      "stack_out": [
+        "axfer"
+      ]
+    },
+    "275": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "277": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "278": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "280": {
+      "op": "itxn_submit"
+    },
+    "281": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
