@@ -1,0 +1,50 @@
+{
+    "hints": {
+        "create_new_application()void": {
+            "call_config": {
+                "no_op": "CALL"
+            }
+        }
+    },
+    "source": {
+        "approval": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMuc3RyYXRlZ2llcy5kaXJlY3RBbGxvY2F0aW9uLlRlc3RpbmcuYXBwcm92YWxfcHJvZ3JhbToKICAgIGludGNibG9jayAwIDEgNgogICAgY2FsbHN1YiBfX3B1eWFfYXJjNF9yb3V0ZXJfXwogICAgcmV0dXJuCgoKLy8gc21hcnRfY29udHJhY3RzLnN0cmF0ZWdpZXMuZGlyZWN0QWxsb2NhdGlvbi5UZXN0aW5nLl9fcHV5YV9hcmM0X3JvdXRlcl9fKCkgLT4gdWludDY0OgpfX3B1eWFfYXJjNF9yb3V0ZXJfXzoKICAgIC8vIGRpcmVjdEFsbG9jYXRpb24ucHk6MTEKICAgIC8vIGNsYXNzIFRlc3RpbmcoYWxnb3B5LkFSQzRDb250cmFjdCk6CiAgICBwcm90byAwIDEKICAgIHR4biBOdW1BcHBBcmdzCiAgICBieiBfX3B1eWFfYXJjNF9yb3V0ZXJfX19iYXJlX3JvdXRpbmdANQogICAgcHVzaGJ5dGVzIDB4MDNiZGYzYmMgLy8gbWV0aG9kICJjcmVhdGVfbmV3X2FwcGxpY2F0aW9uKCl2b2lkIgogICAgdHhuYSBBcHBsaWNhdGlvbkFyZ3MgMAogICAgbWF0Y2ggX19wdXlhX2FyYzRfcm91dGVyX19fY3JlYXRlX25ld19hcHBsaWNhdGlvbl9yb3V0ZUAyCiAgICBpbnRjXzAgLy8gMAogICAgcmV0c3ViCgpfX3B1eWFfYXJjNF9yb3V0ZXJfX19jcmVhdGVfbmV3X2FwcGxpY2F0aW9uX3JvdXRlQDI6CiAgICAvLyBkaXJlY3RBbGxvY2F0aW9uLnB5OjEyCiAgICAvLyBAYXJjNC5hYmltZXRob2QoKQogICAgdHhuIE9uQ29tcGxldGlvbgogICAgIQogICAgYXNzZXJ0IC8vIE9uQ29tcGxldGlvbiBpcyBOb09wCiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgYXNzZXJ0IC8vIGlzIG5vdCBjcmVhdGluZwogICAgY2FsbHN1YiBjcmVhdGVfbmV3X2FwcGxpY2F0aW9uCiAgICBpbnRjXzEgLy8gMQogICAgcmV0c3ViCgpfX3B1eWFfYXJjNF9yb3V0ZXJfX19iYXJlX3JvdXRpbmdANToKICAgIC8vIGRpcmVjdEFsbG9jYXRpb24ucHk6MTEKICAgIC8vIGNsYXNzIFRlc3RpbmcoYWxnb3B5LkFSQzRDb250cmFjdCk6CiAgICB0eG4gT25Db21wbGV0aW9uCiAgICBibnogX19wdXlhX2FyYzRfcm91dGVyX19fYWZ0ZXJfaWZfZWxzZUA5CiAgICB0eG4gQXBwbGljYXRpb25JRAogICAgIQogICAgYXNzZXJ0IC8vIGlzIGNyZWF0aW5nCiAgICBpbnRjXzEgLy8gMQogICAgcmV0c3ViCgpfX3B1eWFfYXJjNF9yb3V0ZXJfX19hZnRlcl9pZl9lbHNlQDk6CiAgICAvLyBkaXJlY3RBbGxvY2F0aW9uLnB5OjExCiAgICAvLyBjbGFzcyBUZXN0aW5nKGFsZ29weS5BUkM0Q29udHJhY3QpOgogICAgaW50Y18wIC8vIDAKICAgIHJldHN1YgoKCi8vIHNtYXJ0X2NvbnRyYWN0cy5zdHJhdGVnaWVzLmRpcmVjdEFsbG9jYXRpb24uVGVzdGluZy5jcmVhdGVfbmV3X2FwcGxpY2F0aW9uKCkgLT4gdm9pZDoKY3JlYXRlX25ld19hcHBsaWNhdGlvbjoKICAgIC8vIGRpcmVjdEFsbG9jYXRpb24ucHk6MTItMTMKICAgIC8vIEBhcmM0LmFiaW1ldGhvZCgpCiAgICAvLyBkZWYgY3JlYXRlX25ld19hcHBsaWNhdGlvbihzZWxmKSAtPiBOb25lOgogICAgcHJvdG8gMCAwCiAgICAvLyBkaXJlY3RBbGxvY2F0aW9uLnB5OjE0CiAgICAvLyBoZWxsb193b3JsZF9hcHAgPSBhcmM0LmFyYzRfY3JlYXRlKEhlbGxvV29ybGQpLmNyZWF0ZWRfYXBwCiAgICBpdHhuX2JlZ2luCiAgICBwdXNoYnl0ZXMgYmFzZTY0KENvRUJRdz09KQogICAgaXR4bl9maWVsZCBDbGVhclN0YXRlUHJvZ3JhbVBhZ2VzCiAgICBwdXNoYnl0ZXMgYmFzZTY0KENpQUNBQUdJQUFGRGlnQUJNUnRCQURLQUJOQ2lnZ0EyR2dDT0FRQUNJb2t4R1JSRU1SaEVOaG9CVndJQWlBQWdTUlVXVndZQ1RGQ0FCQlVmZkhWTVVMQWppVEVaUUFBR01SZ1VSQ09KSW9tS0FRR0FCa2hsYkd4dklJdi9VSWs9KQogICAgaXR4bl9maWVsZCBBcHByb3ZhbFByb2dyYW1QYWdlcwogICAgaW50Y18yIC8vIGFwcGwKICAgIGl0eG5fZmllbGQgVHlwZUVudW0KICAgIGludGNfMCAvLyAwCiAgICBpdHhuX2ZpZWxkIEZlZQogICAgaXR4bl9zdWJtaXQKICAgIGl0eG4gQ3JlYXRlZEFwcGxpY2F0aW9uSUQKICAgIC8vIGRpcmVjdEFsbG9jYXRpb24ucHk6MTYKICAgIC8vIGdyZWV0aW5nLCBfdHhuID0gYXJjNC5hYmlfY2FsbChIZWxsb1dvcmxkLmdyZWV0LCAidGhlcmUiLCBhcHBfaWQ9aGVsbG9fd29ybGRfYXBwKQogICAgaXR4bl9iZWdpbgogICAgaXR4bl9maWVsZCBBcHBsaWNhdGlvbklECiAgICBwdXNoYnl0ZXMgMHhkMGEyODIwMCAvLyBtZXRob2QgImdyZWV0KHN0cmluZylzdHJpbmciCiAgICBpdHhuX2ZpZWxkIEFwcGxpY2F0aW9uQXJncwogICAgcHVzaGJ5dGVzIDB4MDAwNTc0Njg2NTcyNjUKICAgIGl0eG5fZmllbGQgQXBwbGljYXRpb25BcmdzCiAgICBpbnRjXzIgLy8gYXBwbAogICAgaXR4bl9maWVsZCBUeXBlRW51bQogICAgaW50Y18wIC8vIDAKICAgIGl0eG5fZmllbGQgRmVlCiAgICBpdHhuX3N1Ym1pdAogICAgaXR4biBMYXN0TG9nCiAgICBkdXAKICAgIGV4dHJhY3QgNCAwCiAgICBzd2FwCiAgICBleHRyYWN0IDAgNAogICAgcHVzaGJ5dGVzIDB4MTUxZjdjNzUKICAgID09CiAgICBhc3NlcnQgLy8gQVJDNCBwcmVmaXggaXMgdmFsaWQKICAgIGV4dHJhY3QgMiAwCiAgICAvLyBkaXJlY3RBbGxvY2F0aW9uLnB5OjE4CiAgICAvLyBhc3NlcnQgZ3JlZXRpbmcgPT0gIkhlbGxvIHRoZXJlIgogICAgcHVzaGJ5dGVzICJIZWxsbyB0aGVyZSIKICAgID09CiAgICBhc3NlcnQKICAgIHJldHN1Ygo=",
+        "clear": "I3ByYWdtYSB2ZXJzaW9uIDEwCgpzbWFydF9jb250cmFjdHMuc3RyYXRlZ2llcy5kaXJlY3RBbGxvY2F0aW9uLlRlc3RpbmcuY2xlYXJfc3RhdGVfcHJvZ3JhbToKICAgIHB1c2hpbnQgMSAvLyAxCiAgICByZXR1cm4K"
+    },
+    "state": {
+        "global": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        },
+        "local": {
+            "num_byte_slices": 0,
+            "num_uints": 0
+        }
+    },
+    "schema": {
+        "global": {
+            "declared": {},
+            "reserved": {}
+        },
+        "local": {
+            "declared": {},
+            "reserved": {}
+        }
+    },
+    "contract": {
+        "name": "Testing",
+        "methods": [
+            {
+                "name": "create_new_application",
+                "args": [],
+                "readonly": false,
+                "returns": {
+                    "type": "void"
+                }
+            }
+        ],
+        "networks": {}
+    },
+    "bare_call_config": {
+        "no_op": "CREATE"
+    }
+}

@@ -1,0 +1,903 @@
+{
+  "version": 3,
+  "sources": [
+    "directAllocation.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAuBA;;;AACQ;AAAsB;;AAAtB;AACA;AAAkB;;;;AAAlB;AACA;AAAc;;;;;;;;;;AAAd;AACqB;AAAA;;;;AAAA;;;;AAAA;;;;;;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;AAAA;AAArB;AAAqB;;AAArB;;AANR;;;AAAA;;AAAA;;;AAAA;;;;;;AAAA;;;AAAA;;;;AAAA;AAAA;AAQK;;AAAA;AAAA;AAAA;;AAAA;AARL;;;AAAA;;;AAAA;;;AAQK;;;AAAA;AAAA;AARL;;AAAA;;;;;;;;;AAAA;AAAA;AAQA;;;AAEQ;AAAA;;AAAA;AACA;AAAA;;AAAA;AACA;AAAA;;AAAA;AACA;AAAgD;AAAA;AAAA;AAAA;AAAqB;AAAA;AAAA;AAAA;AAAwB;AAAA;AAAA;AAAA;;;AAA7F;;;;;;;;;;;;;AAAA;;;AAAA;;;AAAA;AACA;AAA8C;AAAA;AAAA;AAAA;AAAoB;AAAA;AAAA;AAAA;;;AAAlE;;;;;;;;;;AAAA;;;AAAA;;;AAAA;AACU;;AAAA;;;;AAAA;AAAA;;AAAA;AAAA;;AAAA;AAAV;;;;;;AAAA;AAAA;AAAA;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.strategies.directAllocation.DirectAllocation.approval_program",
+      "params": {},
+      "block": "smart_contracts.strategies.directAllocation.DirectAllocation.approval_program",
+      "stack_in": [],
+      "op": "intcblock 0 6 1"
+    },
+    "6": {
+      "op": "bytecblock \"alloContractId\" \"strategyId\" \"poolId\" \"base_strategy\""
+    },
+    "55": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "57": {
+      "op": "bnz main_after_if_else@2",
+      "stack_out": []
+    },
+    "60": {
+      "callsub": "smart_contracts.strategies.directAllocation.DirectAllocation.__init__",
+      "op": "callsub __init__"
+    },
+    "63": {
+      "block": "main_after_if_else@2",
+      "stack_in": [],
+      "callsub": "smart_contracts.strategies.directAllocation.DirectAllocation.__puya_arc4_router__",
+      "op": "callsub __puya_arc4_router__",
+      "defined_out": [
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%1#0"
+      ]
+    },
+    "66": {
+      "op": "return",
+      "stack_out": []
+    },
+    "67": {
+      "subroutine": "smart_contracts.strategies.directAllocation.DirectAllocation.__init__",
+      "params": {},
+      "block": "__init__",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "70": {
+      "op": "bytec_0 // \"alloContractId\""
+    },
+    "71": {
+      "op": "global ZeroAddress",
+      "defined_out": [
+        "\"alloContractId\"",
+        "new_state_value%0#0"
+      ],
+      "stack_out": [
+        "\"alloContractId\"",
+        "new_state_value%0#0"
+      ]
+    },
+    "73": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "74": {
+      "op": "bytec_1 // \"strategyId\"",
+      "defined_out": [
+        "\"strategyId\""
+      ],
+      "stack_out": [
+        "\"strategyId\""
+      ]
+    },
+    "75": {
+      "op": "pushbytes 0x0000",
+      "defined_out": [
+        "\"strategyId\"",
+        "0x0000"
+      ],
+      "stack_out": [
+        "\"strategyId\"",
+        "0x0000"
+      ]
+    },
+    "79": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "80": {
+      "op": "bytec_2 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\""
+      ],
+      "stack_out": [
+        "\"poolId\""
+      ]
+    },
+    "81": {
+      "op": "pushbytes 0x0000000000000000",
+      "defined_out": [
+        "\"poolId\"",
+        "0x0000000000000000"
+      ],
+      "stack_out": [
+        "\"poolId\"",
+        "0x0000000000000000"
+      ]
+    },
+    "91": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "92": {
+      "op": "itxn_begin"
+    },
+    "93": {
+      "op": "pushint 3 // 3",
+      "defined_out": [
+        "3"
+      ],
+      "stack_out": [
+        "3"
+      ]
+    },
+    "95": {
+      "op": "itxn_field GlobalNumUint",
+      "stack_out": []
+    },
+    "97": {
+      "op": "pushint 2 // 2",
+      "defined_out": [
+        "2"
+      ],
+      "stack_out": [
+        "2"
+      ]
+    },
+    "99": {
+      "op": "itxn_field GlobalNumByteSlice",
+      "stack_out": []
+    },
+    "101": {
+      "op": "pushbytes base64(CoEBQw==)",
+      "defined_out": [
+        "CoEBQw=="
+      ],
+      "stack_out": [
+        "CoEBQw=="
+      ]
+    },
+    "107": {
+      "op": "itxn_field ClearStateProgramPages",
+      "stack_out": []
+    },
+    "109": {
+      "op": "pushbytes base64(CiACAQAmBgZwb29sSWQEFR98dQ5hbGxvQ29udHJhY3RJZApwb29sQW1vdW50CnN0cmF0ZWd5SWQKcG9vbEFjdGl2ZTEYQAADiAAEiAAYQ4oAACoyA2cnBIAAZycFI2coI2crI2eJigABMRtBAgCCFARz6MsWBAhTTU4EbfZcggRmv4QQBAbs+vcEuwHqsgSFxw/LBLeNXjsEvX0OgAR6XCELBCyidsYEQgPsGQQ8rY/XBMbS/BME3g0LVASMsJ98BOCO34UEA6t0lQTTc5vWBPxefcs2GgCOFAACABcAJwA4AFAAYQB4AIgAmAChAKoAswDLANQA3QDmAP4BGgE2AVIjiTEZFEQxGEQ2GgE2GgJXAgCIAWUiiTEZFEQxGESIAXUpTFCwIokxGRREMRhEiAFtFilMULAiiTEZFEQxGESIAWRJFRZXBgJMUClMULAiiTEZFEQxGESIAVUWKUxQsCKJMRkURDEYRIgBTIABACNPAlQpTFCwIokxGRREMRhENhoBF4gBOiKJMRkURDEYRDYaAReIAT4iiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIARwiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIAPwiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAOhIIokxGRREMRhENhoBNhoCVwIANhoDF8AciADSSCKJMRkURDEYRDYaATYaAlcCADYaAxfAHIgAvEgiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAKYiiTEZQAAGMRgURCKJI4mKAgCIAAoqi/5nJwSL/2eJigAAIyplRDEAEkSJigABIyplRImKAAEjKGVEiYoAASMnBGVEiYoAASMrZUSJigABIycFZUSJigEAiP/EIyhlRBREi/9EKIv/Z4mKAQCI/7AjK2VEi/8IK0xniYoCAIj/n4gAAYmKAAAjKGVERImKAgCI/4yJigMBi/2JigMBi/2JigMBi/2JigMAiP9ziP/Vi/2L/ov/iP/iSYz9i/6L/4j/0kmM/Yv+i/+I/9SM/Yk=)",
+      "defined_out": [
+        "CiACAQAmBgZwb29sSWQEFR98dQ5hbGxvQ29udHJhY3RJZApwb29sQW1vdW50CnN0cmF0ZWd5SWQKcG9vbEFjdGl2ZTEYQAADiAAEiAAYQ4oAACoyA2cnBIAAZycFI2coI2crI2eJigABMRtBAgCCFARz6MsWBAhTTU4EbfZcggRmv4QQBAbs+vcEuwHqsgSFxw/LBLeNXjsEvX0OgAR6XCELBCyidsYEQgPsGQQ8rY/XBMbS/BME3g0LVASMsJ98BOCO34UEA6t0lQTTc5vWBPxefcs2GgCOFAACABcAJwA4AFAAYQB4AIgAmAChAKoAswDLANQA3QDmAP4BGgE2AVIjiTEZFEQxGEQ2GgE2GgJXAgCIAWUiiTEZFEQxGESIAXUpTFCwIokxGRREMRhEiAFtFilMULAiiTEZFEQxGESIAWRJFRZXBgJMUClMULAiiTEZFEQxGESIAVUWKUxQsCKJMRkURDEYRIgBTIABACNPAlQpTFCwIokxGRREMRhENhoBF4gBOiKJMRkURDEYRDYaAReIAT4iiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIARwiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIAPwiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAOhIIokxGRREMRhENhoBNhoCVwIANhoDF8AciADSSCKJMRkURDEYRDYaATYaAlcCADYaAxfAHIgAvEgiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAKYiiTEZQAAGMRgURCKJI4mKAgCIAAoqi/5nJwSL/2eJigAAIyplRDEAEkSJigABIyplRImKAAEjKGVEiYoAASMnBGVEiYoAASMrZUSJigABIycFZUSJigEAiP/EIyhlRBREi/9EKIv/Z4mKAQCI/7AjK2VEi/8IK0xniYoCAIj/n4gAAYmKAAAjKGVERImKAgCI/4yJigMBi/2JigMBi/2JigMBi/2JigMAiP9ziP/Vi/2L/ov/iP/iSYz9i/6L/4j/0kmM/Yv+i/+I/9SM/Yk="
+      ],
+      "stack_out": [
+        "CiACAQAmBgZwb29sSWQEFR98dQ5hbGxvQ29udHJhY3RJZApwb29sQW1vdW50CnN0cmF0ZWd5SWQKcG9vbEFjdGl2ZTEYQAADiAAEiAAYQ4oAACoyA2cnBIAAZycFI2coI2crI2eJigABMRtBAgCCFARz6MsWBAhTTU4EbfZcggRmv4QQBAbs+vcEuwHqsgSFxw/LBLeNXjsEvX0OgAR6XCELBCyidsYEQgPsGQQ8rY/XBMbS/BME3g0LVASMsJ98BOCO34UEA6t0lQTTc5vWBPxefcs2GgCOFAACABcAJwA4AFAAYQB4AIgAmAChAKoAswDLANQA3QDmAP4BGgE2AVIjiTEZFEQxGEQ2GgE2GgJXAgCIAWUiiTEZFEQxGESIAXUpTFCwIokxGRREMRhEiAFtFilMULAiiTEZFEQxGESIAWRJFRZXBgJMUClMULAiiTEZFEQxGESIAVUWKUxQsCKJMRkURDEYRIgBTIABACNPAlQpTFCwIokxGRREMRhENhoBF4gBOiKJMRkURDEYRDYaAReIAT4iiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIARwiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIAPwiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAOhIIokxGRREMRhENhoBNhoCVwIANhoDF8AciADSSCKJMRkURDEYRDYaATYaAlcCADYaAxfAHIgAvEgiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAKYiiTEZQAAGMRgURCKJI4mKAgCIAAoqi/5nJwSL/2eJigAAIyplRDEAEkSJigABIyplRImKAAEjKGVEiYoAASMnBGVEiYoAASMrZUSJigABIycFZUSJigEAiP/EIyhlRBREi/9EKIv/Z4mKAQCI/7AjK2VEi/8IK0xniYoCAIj/n4gAAYmKAAAjKGVERImKAgCI/4yJigMBi/2JigMBi/2JigMBi/2JigMAiP9ziP/Vi/2L/ov/iP/iSYz9i/6L/4j/0kmM/Yv+i/+I/9SM/Yk="
+      ]
+    },
+    "939": {
+      "op": "itxn_field ApprovalProgramPages",
+      "stack_out": []
+    },
+    "941": {
+      "op": "intc_1 // appl",
+      "defined_out": [
+        "appl"
+      ],
+      "stack_out": [
+        "appl"
+      ]
+    },
+    "942": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "944": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "945": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "947": {
+      "op": "itxn_submit"
+    },
+    "948": {
+      "op": "bytec_3 // \"base_strategy\""
+    },
+    "949": {
+      "op": "itxn CreatedApplicationID",
+      "defined_out": [
+        "\"base_strategy\"",
+        "new_state_value%1#0"
+      ],
+      "stack_out": [
+        "\"base_strategy\"",
+        "new_state_value%1#0"
+      ]
+    },
+    "951": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "952": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "953": {
+      "subroutine": "smart_contracts.strategies.directAllocation.DirectAllocation.__puya_arc4_router__",
+      "params": {},
+      "block": "__puya_arc4_router__",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "956": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "958": {
+      "op": "bz __puya_arc4_router___bare_routing@5",
+      "stack_out": []
+    },
+    "961": {
+      "op": "pushbytes 0x83c7e211 // method \"initialized(address,string,uint64)void\""
+    },
+    "967": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(initialized(address,string,uint64)void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(initialized(address,string,uint64)void)",
+        "tmp%2#0"
+      ]
+    },
+    "970": {
+      "op": "match __puya_arc4_router___initialized_route@2",
+      "stack_out": []
+    },
+    "974": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "975": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "976": {
+      "block": "__puya_arc4_router___initialized_route@2",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "978": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "979": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "980": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "982": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "983": {
+      "op": "txna ApplicationArgs 1"
+    },
+    "986": {
+      "op": "txna ApplicationArgs 2"
+    },
+    "989": {
+      "op": "txna ApplicationArgs 3",
+      "defined_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%7#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ]
+    },
+    "992": {
+      "callsub": "smart_contracts.strategies.directAllocation.DirectAllocation.initialized",
+      "op": "callsub initialized",
+      "stack_out": []
+    },
+    "995": {
+      "op": "intc_2 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "996": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "997": {
+      "block": "__puya_arc4_router___bare_routing@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "tmp%10#0"
+      ]
+    },
+    "999": {
+      "op": "bnz __puya_arc4_router___after_if_else@9",
+      "stack_out": []
+    },
+    "1002": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "tmp%11#0"
+      ]
+    },
+    "1004": {
+      "op": "!",
+      "defined_out": [
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "tmp%12#0"
+      ]
+    },
+    "1005": {
+      "op": "assert // is creating",
+      "stack_out": []
+    },
+    "1006": {
+      "op": "intc_2 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "1007": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "1008": {
+      "block": "__puya_arc4_router___after_if_else@9",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1009": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "1010": {
+      "subroutine": "smart_contracts.strategies.directAllocation.DirectAllocation.initialized",
+      "params": {
+        "_alloContractId#0": "bytes",
+        "_strategyId#0": "bytes",
+        "_poolId#0": "bytes"
+      },
+      "block": "initialized",
+      "stack_in": [],
+      "op": "proto 3 0"
+    },
+    "1013": {
+      "op": "bytec_0 // \"alloContractId\"",
+      "defined_out": [
+        "\"alloContractId\""
+      ],
+      "stack_out": [
+        "\"alloContractId\""
+      ]
+    },
+    "1014": {
+      "op": "frame_dig -3",
+      "defined_out": [
+        "\"alloContractId\"",
+        "_alloContractId#0 (copy)"
+      ],
+      "stack_out": [
+        "\"alloContractId\"",
+        "_alloContractId#0 (copy)"
+      ]
+    },
+    "1016": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "1017": {
+      "op": "bytec_1 // \"strategyId\"",
+      "defined_out": [
+        "\"strategyId\""
+      ],
+      "stack_out": [
+        "\"strategyId\""
+      ]
+    },
+    "1018": {
+      "op": "frame_dig -2",
+      "defined_out": [
+        "\"strategyId\"",
+        "_strategyId#0 (copy)"
+      ],
+      "stack_out": [
+        "\"strategyId\"",
+        "_strategyId#0 (copy)"
+      ]
+    },
+    "1020": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "1021": {
+      "op": "bytec_2 // \"poolId\"",
+      "defined_out": [
+        "\"poolId\""
+      ],
+      "stack_out": [
+        "\"poolId\""
+      ]
+    },
+    "1022": {
+      "op": "frame_dig -1",
+      "defined_out": [
+        "\"poolId\"",
+        "_poolId#0 (copy)"
+      ],
+      "stack_out": [
+        "\"poolId\"",
+        "_poolId#0 (copy)"
+      ]
+    },
+    "1024": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "1025": {
+      "op": "itxn_begin"
+    },
+    "1026": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1027": {
+      "op": "bytec_0 // \"alloContractId\"",
+      "stack_out": [
+        "0",
+        "\"alloContractId\""
+      ]
+    },
+    "1028": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "1029": {
+      "op": "assert // check self.alloContractId exists",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "1030": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "0"
+      ]
+    },
+    "1031": {
+      "op": "bytec_1 // \"strategyId\"",
+      "stack_out": [
+        "maybe_value%0#0",
+        "0",
+        "\"strategyId\""
+      ]
+    },
+    "1032": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%1#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "1033": {
+      "op": "assert // check self.strategyId exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "1034": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "0"
+      ]
+    },
+    "1035": {
+      "op": "bytec_3 // \"base_strategy\"",
+      "defined_out": [
+        "\"base_strategy\"",
+        "0",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "0",
+        "\"base_strategy\""
+      ]
+    },
+    "1036": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "1037": {
+      "op": "assert // check self.base_strategy exists",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "1038": {
+      "op": "itxn_field ApplicationID",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "1040": {
+      "op": "pushbytes 0x73e8cb16 // method \"initializeVariables(address,string)void\"",
+      "defined_out": [
+        "Method(initializeVariables(address,string)void)",
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0",
+        "Method(initializeVariables(address,string)void)"
+      ]
+    },
+    "1046": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "1048": {
+      "op": "swap",
+      "stack_out": [
+        "maybe_value%1#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "1049": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": [
+        "maybe_value%1#0"
+      ]
+    },
+    "1051": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": []
+    },
+    "1053": {
+      "op": "intc_1 // appl",
+      "defined_out": [
+        "appl"
+      ],
+      "stack_out": [
+        "appl"
+      ]
+    },
+    "1054": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "1056": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1057": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "1059": {
+      "op": "itxn_submit"
+    },
+    "1060": {
+      "op": "itxn_begin"
+    },
+    "1061": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1062": {
+      "op": "bytec_2 // \"poolId\"",
+      "stack_out": [
+        "0",
+        "\"poolId\""
+      ]
+    },
+    "1063": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%3#0",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "1064": {
+      "op": "assert // check self.poolId exists",
+      "stack_out": [
+        "maybe_value%3#0"
+      ]
+    },
+    "1065": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "maybe_value%3#0",
+        "0"
+      ]
+    },
+    "1066": {
+      "op": "bytec_3 // \"base_strategy\"",
+      "stack_out": [
+        "maybe_value%3#0",
+        "0",
+        "\"base_strategy\""
+      ]
+    },
+    "1067": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "maybe_exists%4#0",
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ],
+      "stack_out": [
+        "maybe_value%3#0",
+        "maybe_value%4#0",
+        "maybe_exists%4#0"
+      ]
+    },
+    "1068": {
+      "op": "assert // check self.base_strategy exists",
+      "stack_out": [
+        "maybe_value%3#0",
+        "maybe_value%4#0"
+      ]
+    },
+    "1069": {
+      "op": "itxn_field ApplicationID",
+      "stack_out": [
+        "maybe_value%3#0"
+      ]
+    },
+    "1071": {
+      "op": "pushbytes 0x85c70fcb // method \"baseStrategy_init(uint64)void\"",
+      "defined_out": [
+        "Method(baseStrategy_init(uint64)void)",
+        "maybe_value%3#0"
+      ],
+      "stack_out": [
+        "maybe_value%3#0",
+        "Method(baseStrategy_init(uint64)void)"
+      ]
+    },
+    "1077": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": [
+        "maybe_value%3#0"
+      ]
+    },
+    "1079": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": []
+    },
+    "1081": {
+      "op": "intc_1 // appl",
+      "stack_out": [
+        "appl"
+      ]
+    },
+    "1082": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "1084": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "1085": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "1087": {
+      "op": "itxn_submit"
+    },
+    "1088": {
+      "op": "frame_dig -3",
+      "stack_out": [
+        "_alloContractId#0 (copy)"
+      ]
+    },
+    "1090": {
+      "op": "pushbytes 0x002a",
+      "defined_out": [
+        "0x002a",
+        "_alloContractId#0 (copy)"
+      ],
+      "stack_out": [
+        "_alloContractId#0 (copy)",
+        "0x002a"
+      ]
+    },
+    "1094": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%2#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%2#0"
+      ]
+    },
+    "1095": {
+      "op": "frame_dig -1",
+      "stack_out": [
+        "encoded_tuple_buffer%2#0",
+        "_poolId#0 (copy)"
+      ]
+    },
+    "1097": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%3#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%3#0"
+      ]
+    },
+    "1098": {
+      "op": "frame_dig -2",
+      "stack_out": [
+        "encoded_tuple_buffer%3#0",
+        "_strategyId#0 (copy)"
+      ]
+    },
+    "1100": {
+      "op": "concat",
+      "defined_out": [
+        "encoded_tuple_buffer%4#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%4#0"
+      ]
+    },
+    "1101": {
+      "op": "pushbytes 0x85d2ee4d // method \"Initialized(address,string,uint64)\"",
+      "defined_out": [
+        "Method(Initialized(address,string,uint64))",
+        "encoded_tuple_buffer%4#0"
+      ],
+      "stack_out": [
+        "encoded_tuple_buffer%4#0",
+        "Method(Initialized(address,string,uint64))"
+      ]
+    },
+    "1107": {
+      "op": "swap",
+      "stack_out": [
+        "Method(Initialized(address,string,uint64))",
+        "encoded_tuple_buffer%4#0"
+      ]
+    },
+    "1108": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "1109": {
+      "op": "log",
+      "stack_out": []
+    },
+    "1110": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
