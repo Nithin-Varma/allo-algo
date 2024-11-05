@@ -1,0 +1,111 @@
+#pragma version 10
+
+smart_contracts.registry.hello.MyContract.approval_program:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.registry.hello.MyContract.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // hello.py:3
+    // class MyContract(algopy.ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@5
+    method "test()bool"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___test_route@2
+    int 0
+    retsub
+
+__puya_arc4_router___test_route@2:
+    // hello.py:6
+    // @algopy.arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub test
+    byte 0x00
+    int 0
+    uncover 2
+    setbit
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___bare_routing@5:
+    // hello.py:3
+    // class MyContract(algopy.ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@9
+    txn ApplicationID
+    !
+    assert // is creating
+    int 1
+    retsub
+
+__puya_arc4_router___after_if_else@9:
+    // hello.py:3
+    // class MyContract(algopy.ARC4Contract):
+    int 0
+    retsub
+
+
+// smart_contracts.registry.hello.MyContract.test() -> uint64:
+test:
+    // hello.py:6-7
+    // @algopy.arc4.abimethod()
+    // def test(self) -> bool:
+    proto 0 1
+    // hello.py:8-9
+    // # Check if the box exists
+    // if Txn.sender in self.my_map:
+    byte 0x615f
+    txn Sender
+    concat
+    box_len
+    bury 1
+    bz test_else_body@2
+    // hello.py:10-11
+    // # Reassign the value
+    // self.my_map[Txn.sender] = String(" World")
+    byte 0x615f
+    txn Sender
+    concat
+    dup
+    box_del
+    pop
+    byte " World"
+    box_put
+    b test_after_if_else@3
+
+test_else_body@2:
+    // hello.py:13-14
+    // # Assign a new value
+    // self.my_map[Txn.sender] = String("Hello")
+    byte 0x615f
+    txn Sender
+    concat
+    dup
+    box_del
+    pop
+    byte "Hello"
+    box_put
+
+test_after_if_else@3:
+    // hello.py:15-16
+    // # Read a value
+    // return self.my_map[Txn.sender] == String("Hello World")
+    byte 0x615f
+    txn Sender
+    concat
+    box_get
+    assert // check self.my_map entry exists
+    byte "Hello World"
+    ==
+    retsub
