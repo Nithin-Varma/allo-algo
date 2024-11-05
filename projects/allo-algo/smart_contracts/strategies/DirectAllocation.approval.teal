@@ -1,0 +1,187 @@
+#pragma version 10
+
+smart_contracts.strategies.directAllocation.DirectAllocation.approval_program:
+    intcblock 0 6 1
+    bytecblock "alloContractId" "strategyId" "poolId" "base_strategy"
+    txn ApplicationID
+    bnz main_after_if_else@2
+    callsub __init__
+
+main_after_if_else@2:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.strategies.directAllocation.DirectAllocation.__init__() -> void:
+__init__:
+    // directAllocation.py:24
+    // def __init__(self) -> None:
+    proto 0 0
+    // directAllocation.py:25
+    // self.alloContractId = Address()
+    bytec_0 // "alloContractId"
+    global ZeroAddress
+    app_global_put
+    // directAllocation.py:26
+    // self.strategyId = String()
+    bytec_1 // "strategyId"
+    pushbytes 0x0000
+    app_global_put
+    // directAllocation.py:27
+    // self.poolId = UInt64(0)
+    bytec_2 // "poolId"
+    pushbytes 0x0000000000000000
+    app_global_put
+    // directAllocation.py:28
+    // self.base_strategy = arc4.arc4_create(BaseStrategy).created_app
+    itxn_begin
+    pushint 3 // 3
+    itxn_field GlobalNumUint
+    pushint 2 // 2
+    itxn_field GlobalNumByteSlice
+    pushbytes base64(CoEBQw==)
+    itxn_field ClearStateProgramPages
+    pushbytes base64(CiACAQAmBgZwb29sSWQEFR98dQ5hbGxvQ29udHJhY3RJZApwb29sQW1vdW50CnN0cmF0ZWd5SWQKcG9vbEFjdGl2ZTEYQAADiAAEiAAYQ4oAACoyA2cnBIAAZycFI2coI2crI2eJigABMRtBAgCCFARz6MsWBAhTTU4EbfZcggRmv4QQBAbs+vcEuwHqsgSFxw/LBLeNXjsEvX0OgAR6XCELBCyidsYEQgPsGQQ8rY/XBMbS/BME3g0LVASMsJ98BOCO34UEA6t0lQTTc5vWBPxefcs2GgCOFAACABcAJwA4AFAAYQB4AIgAmAChAKoAswDLANQA3QDmAP4BGgE2AVIjiTEZFEQxGEQ2GgE2GgJXAgCIAWUiiTEZFEQxGESIAXUpTFCwIokxGRREMRhEiAFtFilMULAiiTEZFEQxGESIAWRJFRZXBgJMUClMULAiiTEZFEQxGESIAVUWKUxQsCKJMRkURDEYRIgBTIABACNPAlQpTFCwIokxGRREMRhENhoBF4gBOiKJMRkURDEYRDYaAReIAT4iiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIARwiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQiiTEZFEQxGEQ2GgFXAgA2GgIXwByIAPwiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAOhIIokxGRREMRhENhoBNhoCVwIANhoDF8AciADSSCKJMRkURDEYRDYaATYaAlcCADYaAxfAHIgAvEgiiTEZFEQxGEQ2GgE2GgJXAgA2GgMXwByIAKYiiTEZQAAGMRgURCKJI4mKAgCIAAoqi/5nJwSL/2eJigAAIyplRDEAEkSJigABIyplRImKAAEjKGVEiYoAASMnBGVEiYoAASMrZUSJigABIycFZUSJigEAiP/EIyhlRBREi/9EKIv/Z4mKAQCI/7AjK2VEi/8IK0xniYoCAIj/n4gAAYmKAAAjKGVERImKAgCI/4yJigMBi/2JigMBi/2JigMBi/2JigMAiP9ziP/Vi/2L/ov/iP/iSYz9i/6L/4j/0kmM/Yv+i/+I/9SM/Yk=)
+    itxn_field ApprovalProgramPages
+    intc_1 // appl
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    bytec_3 // "base_strategy"
+    itxn CreatedApplicationID
+    app_global_put
+    retsub
+
+
+// smart_contracts.strategies.directAllocation.DirectAllocation.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // directAllocation.py:22
+    // class DirectAllocation(ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@5
+    pushbytes 0x83c7e211 // method "initialized(address,string,uint64)void"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___initialized_route@2
+    intc_0 // 0
+    retsub
+
+__puya_arc4_router___initialized_route@2:
+    // directAllocation.py:30
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // directAllocation.py:22
+    // class DirectAllocation(ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    txna ApplicationArgs 3
+    // directAllocation.py:30
+    // @arc4.abimethod()
+    callsub initialized
+    intc_2 // 1
+    retsub
+
+__puya_arc4_router___bare_routing@5:
+    // directAllocation.py:22
+    // class DirectAllocation(ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@9
+    txn ApplicationID
+    !
+    assert // is creating
+    intc_2 // 1
+    retsub
+
+__puya_arc4_router___after_if_else@9:
+    // directAllocation.py:22
+    // class DirectAllocation(ARC4Contract):
+    intc_0 // 0
+    retsub
+
+
+// smart_contracts.strategies.directAllocation.DirectAllocation.initialized(_alloContractId: bytes, _strategyId: bytes, _poolId: bytes) -> void:
+initialized:
+    // directAllocation.py:30-31
+    // @arc4.abimethod()
+    // def initialized(self, _alloContractId: Address, _strategyId: String, _poolId: UInt64) -> None:
+    proto 3 0
+    // directAllocation.py:32
+    // self.alloContractId = _alloContractId
+    bytec_0 // "alloContractId"
+    frame_dig -3
+    app_global_put
+    // directAllocation.py:33
+    // self.strategyId = _strategyId
+    bytec_1 // "strategyId"
+    frame_dig -2
+    app_global_put
+    // directAllocation.py:34
+    // self.poolId = _poolId
+    bytec_2 // "poolId"
+    frame_dig -1
+    app_global_put
+    // directAllocation.py:35
+    // arc4.abi_call(BaseStrategy.initializeVariables, self.alloContractId, self.strategyId, app_id=self.base_strategy)
+    itxn_begin
+    intc_0 // 0
+    bytec_0 // "alloContractId"
+    app_global_get_ex
+    assert // check self.alloContractId exists
+    intc_0 // 0
+    bytec_1 // "strategyId"
+    app_global_get_ex
+    assert // check self.strategyId exists
+    intc_0 // 0
+    bytec_3 // "base_strategy"
+    app_global_get_ex
+    assert // check self.base_strategy exists
+    itxn_field ApplicationID
+    pushbytes 0x73e8cb16 // method "initializeVariables(address,string)void"
+    itxn_field ApplicationArgs
+    swap
+    itxn_field ApplicationArgs
+    itxn_field ApplicationArgs
+    intc_1 // appl
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    // directAllocation.py:36
+    // arc4.abi_call(BaseStrategy.baseStrategy_init, self.poolId, app_id=self.base_strategy)
+    itxn_begin
+    intc_0 // 0
+    bytec_2 // "poolId"
+    app_global_get_ex
+    assert // check self.poolId exists
+    intc_0 // 0
+    bytec_3 // "base_strategy"
+    app_global_get_ex
+    assert // check self.base_strategy exists
+    itxn_field ApplicationID
+    pushbytes 0x85c70fcb // method "baseStrategy_init(uint64)void"
+    itxn_field ApplicationArgs
+    itxn_field ApplicationArgs
+    intc_1 // appl
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    // directAllocation.py:37
+    // arc4.emit(Initialized(_alloContractId, _strategyId, _poolId))
+    frame_dig -3
+    pushbytes 0x002a
+    concat
+    frame_dig -1
+    concat
+    frame_dig -2
+    concat
+    pushbytes 0x85d2ee4d // method "Initialized(address,string,uint64)"
+    swap
+    concat
+    log
+    retsub
