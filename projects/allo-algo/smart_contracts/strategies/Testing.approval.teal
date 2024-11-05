@@ -1,0 +1,98 @@
+#pragma version 10
+
+smart_contracts.strategies.directAllocation.Testing.approval_program:
+    intcblock 0 1 6
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.strategies.directAllocation.Testing.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // directAllocation.py:11
+    // class Testing(algopy.ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@5
+    pushbytes 0x03bdf3bc // method "create_new_application()void"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___create_new_application_route@2
+    intc_0 // 0
+    retsub
+
+__puya_arc4_router___create_new_application_route@2:
+    // directAllocation.py:12
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub create_new_application
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___bare_routing@5:
+    // directAllocation.py:11
+    // class Testing(algopy.ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@9
+    txn ApplicationID
+    !
+    assert // is creating
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___after_if_else@9:
+    // directAllocation.py:11
+    // class Testing(algopy.ARC4Contract):
+    intc_0 // 0
+    retsub
+
+
+// smart_contracts.strategies.directAllocation.Testing.create_new_application() -> void:
+create_new_application:
+    // directAllocation.py:12-13
+    // @arc4.abimethod()
+    // def create_new_application(self) -> None:
+    proto 0 0
+    // directAllocation.py:14
+    // hello_world_app = arc4.arc4_create(HelloWorld).created_app
+    itxn_begin
+    pushbytes base64(CoEBQw==)
+    itxn_field ClearStateProgramPages
+    pushbytes base64(CiACAAGIAAFDigABMRtBADKABNCiggA2GgCOAQACIokxGRREMRhENhoBVwIAiAAgSRUWVwYCTFCABBUffHVMULAjiTEZQAAGMRgURCOJIomKAQGABkhlbGxvIIv/UIk=)
+    itxn_field ApprovalProgramPages
+    intc_2 // appl
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    itxn CreatedApplicationID
+    // directAllocation.py:16
+    // greeting, _txn = arc4.abi_call(HelloWorld.greet, "there", app_id=hello_world_app)
+    itxn_begin
+    itxn_field ApplicationID
+    pushbytes 0xd0a28200 // method "greet(string)string"
+    itxn_field ApplicationArgs
+    pushbytes 0x00057468657265
+    itxn_field ApplicationArgs
+    intc_2 // appl
+    itxn_field TypeEnum
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    itxn LastLog
+    dup
+    extract 4 0
+    swap
+    extract 0 4
+    pushbytes 0x151f7c75
+    ==
+    assert // ARC4 prefix is valid
+    extract 2 0
+    // directAllocation.py:18
+    // assert greeting == "Hello there"
+    pushbytes "Hello there"
+    ==
+    assert
+    retsub

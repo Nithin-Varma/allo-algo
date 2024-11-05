@@ -1,0 +1,79 @@
+#pragma version 10
+
+smart_contracts.strategies.baseStrategy.HelloWorld.approval_program:
+    intcblock 0 1
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.strategies.baseStrategy.HelloWorld.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // baseStrategy.py:10
+    // class HelloWorld(ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@5
+    pushbytes 0xd0a28200 // method "greet(string)string"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___greet_route@2
+    intc_0 // 0
+    retsub
+
+__puya_arc4_router___greet_route@2:
+    // baseStrategy.py:12
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // baseStrategy.py:10
+    // class HelloWorld(ARC4Contract):
+    txna ApplicationArgs 1
+    extract 2 0
+    // baseStrategy.py:12
+    // @arc4.abimethod()
+    callsub greet
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    pushbytes 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___bare_routing@5:
+    // baseStrategy.py:10
+    // class HelloWorld(ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@9
+    txn ApplicationID
+    !
+    assert // is creating
+    intc_1 // 1
+    retsub
+
+__puya_arc4_router___after_if_else@9:
+    // baseStrategy.py:10
+    // class HelloWorld(ARC4Contract):
+    intc_0 // 0
+    retsub
+
+
+// smart_contracts.strategies.baseStrategy.HelloWorld.greet(name: bytes) -> bytes:
+greet:
+    // baseStrategy.py:12-13
+    // @arc4.abimethod()
+    // def greet(self, name: String) -> String:
+    proto 1 1
+    // baseStrategy.py:14
+    // return "Hello " + name
+    pushbytes "Hello "
+    frame_dig -1
+    concat
+    retsub

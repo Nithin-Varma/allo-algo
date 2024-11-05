@@ -1,0 +1,441 @@
+{
+  "version": 3,
+  "sources": [
+    "directAllocation.py"
+  ],
+  "mappings": ";;;;;;;;;;AAUA;;;AAAA;;AAAA;;;AAAA;;;;;;AAAA;;;AAAA;;;;AAAA;AAAA;AACK;;AAAA;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;AADL;;AAAA;;;;;;;;;AAAA;AAAA;AACA;;;AAE0B;AAAA;;;;;;;;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;AAAA;AAAA;;AAED;;;AAAA;;;;;;;;AAAgC;;;;;;;;;;;AAAhC;;;AAAA;;;AAAA;AAAA;;AAAA;AAAA;;;AAAA;AAAA;;;AAAA;;;;;;AAAA;AAAA;AAAA;;;AAEE;;;;;;;;;;;;;AAAZ;AAAP;",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "smart_contracts.strategies.directAllocation.Testing.approval_program",
+      "params": {},
+      "block": "smart_contracts.strategies.directAllocation.Testing.approval_program",
+      "stack_in": [],
+      "op": "intcblock 0 1 6"
+    },
+    "6": {
+      "callsub": "smart_contracts.strategies.directAllocation.Testing.__puya_arc4_router__",
+      "op": "callsub __puya_arc4_router__",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "9": {
+      "op": "return",
+      "stack_out": []
+    },
+    "10": {
+      "subroutine": "smart_contracts.strategies.directAllocation.Testing.__puya_arc4_router__",
+      "params": {},
+      "block": "__puya_arc4_router__",
+      "stack_in": [],
+      "op": "proto 0 1"
+    },
+    "13": {
+      "op": "txn NumAppArgs",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "15": {
+      "op": "bz __puya_arc4_router___bare_routing@5",
+      "stack_out": []
+    },
+    "18": {
+      "op": "pushbytes 0x03bdf3bc // method \"create_new_application()void\""
+    },
+    "24": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(create_new_application()void)",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "Method(create_new_application()void)",
+        "tmp%2#0"
+      ]
+    },
+    "27": {
+      "op": "match __puya_arc4_router___create_new_application_route@2",
+      "stack_out": []
+    },
+    "31": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "32": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "33": {
+      "block": "__puya_arc4_router___create_new_application_route@2",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%3#0"
+      ]
+    },
+    "35": {
+      "op": "!",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "36": {
+      "op": "assert // OnCompletion is NoOp",
+      "stack_out": []
+    },
+    "37": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "39": {
+      "op": "assert // is not creating",
+      "stack_out": []
+    },
+    "40": {
+      "callsub": "smart_contracts.strategies.directAllocation.Testing.create_new_application",
+      "op": "callsub create_new_application"
+    },
+    "43": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "44": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "45": {
+      "block": "__puya_arc4_router___bare_routing@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "47": {
+      "op": "bnz __puya_arc4_router___after_if_else@9",
+      "stack_out": []
+    },
+    "50": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "52": {
+      "op": "!",
+      "defined_out": [
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "tmp%9#0"
+      ]
+    },
+    "53": {
+      "op": "assert // is creating",
+      "stack_out": []
+    },
+    "54": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "55": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "56": {
+      "block": "__puya_arc4_router___after_if_else@9",
+      "stack_in": [],
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "57": {
+      "retsub": true,
+      "op": "retsub"
+    },
+    "58": {
+      "subroutine": "smart_contracts.strategies.directAllocation.Testing.create_new_application",
+      "params": {},
+      "block": "create_new_application",
+      "stack_in": [],
+      "op": "proto 0 0"
+    },
+    "61": {
+      "op": "itxn_begin"
+    },
+    "62": {
+      "op": "pushbytes base64(CoEBQw==)",
+      "defined_out": [
+        "CoEBQw=="
+      ],
+      "stack_out": [
+        "CoEBQw=="
+      ]
+    },
+    "68": {
+      "op": "itxn_field ClearStateProgramPages",
+      "stack_out": []
+    },
+    "70": {
+      "op": "pushbytes base64(CiACAAGIAAFDigABMRtBADKABNCiggA2GgCOAQACIokxGRREMRhENhoBVwIAiAAgSRUWVwYCTFCABBUffHVMULAjiTEZQAAGMRgURCOJIomKAQGABkhlbGxvIIv/UIk=)",
+      "defined_out": [
+        "CiACAAGIAAFDigABMRtBADKABNCiggA2GgCOAQACIokxGRREMRhENhoBVwIAiAAgSRUWVwYCTFCABBUffHVMULAjiTEZQAAGMRgURCOJIomKAQGABkhlbGxvIIv/UIk="
+      ],
+      "stack_out": [
+        "CiACAAGIAAFDigABMRtBADKABNCiggA2GgCOAQACIokxGRREMRhENhoBVwIAiAAgSRUWVwYCTFCABBUffHVMULAjiTEZQAAGMRgURCOJIomKAQGABkhlbGxvIIv/UIk="
+      ]
+    },
+    "167": {
+      "op": "itxn_field ApprovalProgramPages",
+      "stack_out": []
+    },
+    "169": {
+      "op": "intc_2 // appl",
+      "defined_out": [
+        "appl"
+      ],
+      "stack_out": [
+        "appl"
+      ]
+    },
+    "170": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "172": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "0"
+      ]
+    },
+    "173": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "175": {
+      "op": "itxn_submit"
+    },
+    "176": {
+      "op": "itxn CreatedApplicationID",
+      "defined_out": [
+        "hello_world_app#0"
+      ],
+      "stack_out": [
+        "hello_world_app#0"
+      ]
+    },
+    "178": {
+      "op": "itxn_begin"
+    },
+    "179": {
+      "op": "itxn_field ApplicationID",
+      "stack_out": []
+    },
+    "181": {
+      "op": "pushbytes 0xd0a28200 // method \"greet(string)string\"",
+      "defined_out": [
+        "Method(greet(string)string)"
+      ],
+      "stack_out": [
+        "Method(greet(string)string)"
+      ]
+    },
+    "187": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": []
+    },
+    "189": {
+      "op": "pushbytes 0x00057468657265",
+      "defined_out": [
+        "0x00057468657265"
+      ],
+      "stack_out": [
+        "0x00057468657265"
+      ]
+    },
+    "198": {
+      "op": "itxn_field ApplicationArgs",
+      "stack_out": []
+    },
+    "200": {
+      "op": "intc_2 // appl",
+      "stack_out": [
+        "appl"
+      ]
+    },
+    "201": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": []
+    },
+    "203": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "0"
+      ]
+    },
+    "204": {
+      "op": "itxn_field Fee",
+      "stack_out": []
+    },
+    "206": {
+      "op": "itxn_submit"
+    },
+    "207": {
+      "op": "itxn LastLog"
+    },
+    "209": {
+      "op": "dup",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "awst_tmp%0#0 (copy)"
+      ]
+    },
+    "210": {
+      "op": "extract 4 0",
+      "defined_out": [
+        "awst_tmp%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "awst_tmp%0#0",
+        "tmp%0#0"
+      ]
+    },
+    "213": {
+      "op": "swap",
+      "stack_out": [
+        "tmp%0#0",
+        "awst_tmp%0#0"
+      ]
+    },
+    "214": {
+      "op": "extract 0 4",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0"
+      ]
+    },
+    "217": {
+      "op": "pushbytes 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "tmp%0#0",
+        "tmp%1#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%1#0",
+        "0x151f7c75"
+      ]
+    },
+    "223": {
+      "op": "==",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "tmp%2#0"
+      ]
+    },
+    "224": {
+      "op": "assert // ARC4 prefix is valid",
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "225": {
+      "op": "extract 2 0",
+      "defined_out": [
+        "greeting#0"
+      ],
+      "stack_out": [
+        "greeting#0"
+      ]
+    },
+    "228": {
+      "op": "pushbytes \"Hello there\"",
+      "defined_out": [
+        "\"Hello there\"",
+        "greeting#0"
+      ],
+      "stack_out": [
+        "greeting#0",
+        "\"Hello there\""
+      ]
+    },
+    "241": {
+      "op": "==",
+      "defined_out": [
+        "tmp%4#0"
+      ],
+      "stack_out": [
+        "tmp%4#0"
+      ]
+    },
+    "242": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "243": {
+      "retsub": true,
+      "op": "retsub"
+    }
+  }
+}
