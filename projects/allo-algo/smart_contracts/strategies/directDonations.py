@@ -5,7 +5,7 @@ from algopy.arc4 import DynamicArray, Address, Struct, String
 class proposalData(arc4.Struct):
     proposalId : arc4.UInt64
     proposalTitle : arc4.String
-    proposalOwner : Account
+    proposalOwner : arc4.Address
     proposalAmount : arc4.UInt64
     proposalDescription : arc4.String
 
@@ -43,7 +43,7 @@ class DirectDonations(ARC4Contract):
             proposalId = arc4.UInt64.from_bytes(algopy.op.itob(self.proposal_id_incrementer)),
             # proposalId = self.proposal_id_incrementer,
             proposalTitle = _proposalTitle,
-            proposalOwner = Txn.sender,
+            proposalOwner = arc4.Address.from_bytes(algopy.op.(Txn.sender)),
             proposalAmount = arc4.UInt64.from_bytes(algopy.op.itob(algopy.UInt64(0))),
             proposalDescription= _proposalDescription
         )
