@@ -123,10 +123,14 @@ class BaseStrategy(ARC4Contract):
         self.distribute(_recipientIds, _data, _sender)
         self.afterDistribute(_recipientIds,_data, _sender)
 
-    # def getPayOuts(self, _recipientIds: DynamicArray[Address], _data: DynamicArray[Bytes]) :
-    #     assert(_recipientIds.length == _data.length, "recipient and data length mismatch")
-        
+    # payouts
+    @arc4.abimethod()   
+    def getPayOut(self, _recipientIds: Address, _data: Bytes) -> None:
+        pass
 
-    # @algopy.subroutine
-    # def _getPayOut(self, _recipientId: Address, _data: Bytes):
-    #     pass
+    @arc4.abimethod()
+    def GetPayout(self, _recipientIds: DynamicArray[Address], _data: DynamicArray[Bytes]) -> None:
+        recipientLength = _recipientIds.length
+        assert recipientLength == _data.length, "recipient and data length mismatch"
+        for i in range(recipientLength):
+            self.getPayOut(_recipientIds[i], _data[i])

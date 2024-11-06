@@ -35,3 +35,7 @@ class DirectAllocation(ARC4Contract):
         arc4.abi_call(BaseStrategy.initializeVariables, self.alloContractId, self.strategyId, app_id=self.base_strategy)
         arc4.abi_call(BaseStrategy.baseStrategy_init, self.poolId, app_id=self.base_strategy)
         arc4.emit(Initialized(_alloContractId, _strategyId, _poolId))
+
+    @arc4.abimethod()
+    def directAllocation(self) -> None :
+        
