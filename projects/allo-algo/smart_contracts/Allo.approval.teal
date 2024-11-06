@@ -1,0 +1,1982 @@
+#pragma version 10
+
+smart_contracts.allo.Allo.approval_program:
+    txn ApplicationID
+    bnz main_entrypoint@2
+    callsub __init__
+
+main_entrypoint@2:
+    callsub __puya_arc4_router__
+    return
+
+
+// smart_contracts.allo.Allo.__puya_arc4_router__() -> uint64:
+__puya_arc4_router__:
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    proto 0 1
+    txn NumAppArgs
+    bz __puya_arc4_router___bare_routing@31
+    method "initialize(account,application,account,uint64,uint64)void"
+    method "createPoolWithCustomStrategy(byte[],application,byte[],uint64,string,address[])uint64"
+    method "createPool(byte[],application,byte[],uint64,string,address[])uint64"
+    method "updatePoolMetadata(uint64,string)void"
+    method "updateRegistry(application)void"
+    method "updateTreasury(account)void"
+    method "updatePercentFee(uint64)void"
+    method "updateBaseFee(uint64)void"
+    method "addToCloneableStrategies(account)void"
+    method "removeFromCloneableStrategies(account)void"
+    method "addPoolManager(uint64,account)void"
+    method "removePoolManager(uint64,account)void"
+    method "registerRecipient(uint64,byte[])string"
+    method "fundPool(uint64,uint64)void"
+    method "allocate(uint64,byte[])void"
+    method "batchAllocate(uint64[],byte[][])void"
+    method "distribute(uint64,address[],byte[])void"
+    method "getFeeDenominator()uint64"
+    method "isPoolAdmin(uint64,account)bool"
+    method "isPoolManager(uint64,account)bool"
+    method "getStrategy(uint64)uint64"
+    method "getPercentFee()uint64"
+    method "getBaseFee()uint64"
+    method "getTreasury()byte[]"
+    method "getRegistry()uint64"
+    method "isCloneableStrategy(account)bool"
+    method "getPool(uint64)(byte[],uint64,string,byte[],byte[])"
+    txna ApplicationArgs 0
+    match __puya_arc4_router___initialize_route@2 __puya_arc4_router___createPoolWithCustomStrategy_route@3 __puya_arc4_router___createPool_route@4 __puya_arc4_router___updatePoolMetadata_route@5 __puya_arc4_router___updateRegistry_route@6 __puya_arc4_router___updateTreasury_route@7 __puya_arc4_router___updatePercentFee_route@8 __puya_arc4_router___updateBaseFee_route@9 __puya_arc4_router___addToCloneableStrategies_route@10 __puya_arc4_router___removeFromCloneableStrategies_route@11 __puya_arc4_router___addPoolManager_route@12 __puya_arc4_router___removePoolManager_route@13 __puya_arc4_router___registerRecipient_route@14 __puya_arc4_router___fundPool_route@15 __puya_arc4_router___allocate_route@16 __puya_arc4_router___batchAllocate_route@17 __puya_arc4_router___distribute_route@18 __puya_arc4_router___getFeeDenominator_route@19 __puya_arc4_router___isPoolAdmin_route@20 __puya_arc4_router___isPoolManager_route@21 __puya_arc4_router___getStrategy_route@22 __puya_arc4_router___getPercentFee_route@23 __puya_arc4_router___getBaseFee_route@24 __puya_arc4_router___getTreasury_route@25 __puya_arc4_router___getRegistry_route@26 __puya_arc4_router___isCloneableStrategy_route@27 __puya_arc4_router___getPool_route@28
+    int 0
+    retsub
+
+__puya_arc4_router___initialize_route@2:
+    // allo.py:66
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 2
+    btoi
+    txnas Applications
+    txna ApplicationArgs 3
+    btoi
+    txnas Accounts
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    btoi
+    // allo.py:66
+    // @arc4.abimethod()
+    callsub initialize
+    int 1
+    retsub
+
+__puya_arc4_router___createPoolWithCustomStrategy_route@3:
+    // allo.py:106
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    btoi
+    txnas Applications
+    txna ApplicationArgs 3
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    txna ApplicationArgs 6
+    // allo.py:106
+    // @arc4.abimethod()
+    callsub createPoolWithCustomStrategy
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___createPool_route@4:
+    // allo.py:124
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    btoi
+    txnas Applications
+    txna ApplicationArgs 3
+    txna ApplicationArgs 4
+    btoi
+    txna ApplicationArgs 5
+    txna ApplicationArgs 6
+    // allo.py:124
+    // @arc4.abimethod()
+    callsub createPool
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___updatePoolMetadata_route@5:
+    // allo.py:200
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    // allo.py:200
+    // @arc4.abimethod()
+    callsub updatePoolMetadata
+    int 1
+    retsub
+
+__puya_arc4_router___updateRegistry_route@6:
+    // allo.py:208
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Applications
+    // allo.py:208
+    // @arc4.abimethod()
+    callsub updateRegistry
+    int 1
+    retsub
+
+__puya_arc4_router___updateTreasury_route@7:
+    // allo.py:213
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // allo.py:213
+    // @arc4.abimethod()
+    callsub updateTreasury
+    int 1
+    retsub
+
+__puya_arc4_router___updatePercentFee_route@8:
+    // allo.py:218
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // allo.py:218
+    // @arc4.abimethod()
+    callsub updatePercentFee
+    int 1
+    retsub
+
+__puya_arc4_router___updateBaseFee_route@9:
+    // allo.py:223
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // allo.py:223
+    // @arc4.abimethod()
+    callsub updateBaseFee
+    int 1
+    retsub
+
+__puya_arc4_router___addToCloneableStrategies_route@10:
+    // allo.py:228
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // allo.py:228
+    // @arc4.abimethod()
+    callsub addToCloneableStrategies
+    int 1
+    retsub
+
+__puya_arc4_router___removeFromCloneableStrategies_route@11:
+    // allo.py:234
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // allo.py:234
+    // @arc4.abimethod()
+    callsub removeFromCloneableStrategies
+    int 1
+    retsub
+
+__puya_arc4_router___addPoolManager_route@12:
+    // allo.py:239
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // allo.py:239
+    // @arc4.abimethod()
+    callsub addPoolManager
+    int 1
+    retsub
+
+__puya_arc4_router___removePoolManager_route@13:
+    // allo.py:247
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // allo.py:247
+    // @arc4.abimethod()
+    callsub removePoolManager
+    int 1
+    retsub
+
+__puya_arc4_router___registerRecipient_route@14:
+    // allo.py:254
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    // allo.py:254
+    // @arc4.abimethod()
+    callsub registerRecipient
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___fundPool_route@15:
+    // allo.py:265
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    // allo.py:265
+    // @arc4.abimethod()
+    callsub fundPool
+    int 1
+    retsub
+
+__puya_arc4_router___allocate_route@16:
+    // allo.py:275
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    // allo.py:275
+    // @arc4.abimethod()
+    callsub allocate
+    pop
+    int 1
+    retsub
+
+__puya_arc4_router___batchAllocate_route@17:
+    // allo.py:282
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    txna ApplicationArgs 2
+    // allo.py:282
+    // @arc4.abimethod()
+    callsub batchAllocate
+    int 1
+    retsub
+
+__puya_arc4_router___distribute_route@18:
+    // allo.py:290
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    txna ApplicationArgs 3
+    // allo.py:290
+    // @arc4.abimethod()
+    callsub distribute
+    int 1
+    retsub
+
+__puya_arc4_router___getFeeDenominator_route@19:
+    // allo.py:335
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getFeeDenominator
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___isPoolAdmin_route@20:
+    // allo.py:339
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // allo.py:339
+    // @arc4.abimethod()
+    callsub isPoolAdmin
+    byte 0x00
+    int 0
+    uncover 2
+    setbit
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___isPoolManager_route@21:
+    // allo.py:345
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txna ApplicationArgs 2
+    btoi
+    txnas Accounts
+    // allo.py:345
+    // @arc4.abimethod()
+    callsub isPoolManager
+    byte 0x00
+    int 0
+    uncover 2
+    setbit
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getStrategy_route@22:
+    // allo.py:355
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // allo.py:355
+    // @arc4.abimethod()
+    callsub getStrategy
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getPercentFee_route@23:
+    // allo.py:361
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getPercentFee
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getBaseFee_route@24:
+    // allo.py:365
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getBaseFee
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getTreasury_route@25:
+    // allo.py:369
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getTreasury
+    dup
+    len
+    itob
+    extract 6 2
+    swap
+    concat
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getRegistry_route@26:
+    // allo.py:373
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    callsub getRegistry
+    itob
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___isCloneableStrategy_route@27:
+    // allo.py:377
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    txnas Accounts
+    // allo.py:377
+    // @arc4.abimethod()
+    callsub isCloneableStrategy
+    byte 0x00
+    int 0
+    uncover 2
+    setbit
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___getPool_route@28:
+    // allo.py:381
+    // @arc4.abimethod()
+    txn OnCompletion
+    !
+    assert // OnCompletion is NoOp
+    txn ApplicationID
+    assert // is not creating
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txna ApplicationArgs 1
+    btoi
+    // allo.py:381
+    // @arc4.abimethod()
+    callsub getPool
+    byte 0x151f7c75
+    swap
+    concat
+    log
+    int 1
+    retsub
+
+__puya_arc4_router___bare_routing@31:
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    txn OnCompletion
+    bnz __puya_arc4_router___after_if_else@35
+    txn ApplicationID
+    !
+    assert // is creating
+    int 1
+    retsub
+
+__puya_arc4_router___after_if_else@35:
+    // allo.py:52
+    // class Allo(algopy.ARC4Contract):
+    int 0
+    retsub
+
+
+// smart_contracts.allo.Allo.initialize(owner: bytes, registry: uint64, treasury: bytes, percentFee: uint64, baseFee: uint64) -> void:
+initialize:
+    // allo.py:66-74
+    // @arc4.abimethod()
+    // def initialize(
+    //     self,
+    //     owner: algopy.Account,
+    //     registry: algopy.Application,
+    //     treasury: algopy.Account,
+    //     percentFee: algopy.UInt64,
+    //     baseFee: algopy.UInt64
+    // ) -> None:
+    proto 5 0
+    // allo.py:75
+    // assert self.owner == algopy.Account(), "Contract has already been initialized"
+    int 0
+    byte "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    global ZeroAddress
+    ==
+    assert // Contract has already been initialized
+    // allo.py:76
+    // assert owner != algopy.Account(), "Owner cannot be zero address"
+    frame_dig -5
+    global ZeroAddress
+    !=
+    assert // Owner cannot be zero address
+    // allo.py:77
+    // self.owner = owner
+    byte "owner"
+    frame_dig -5
+    app_global_put
+    // allo.py:78
+    // self._updateRegistry(registry)
+    frame_dig -4
+    callsub _updateRegistry
+    // allo.py:79
+    // self._updateTreasury(treasury)
+    frame_dig -3
+    callsub _updateTreasury
+    // allo.py:80
+    // self._updatePercentFee(percentFee)
+    frame_dig -2
+    callsub _updatePercentFee
+    // allo.py:81
+    // self._updateBaseFee(baseFee)
+    frame_dig -1
+    callsub _updateBaseFee
+    retsub
+
+
+// smart_contracts.allo.Allo._updateRegistry(registry: uint64) -> void:
+_updateRegistry:
+    // allo.py:87-88
+    // @algopy.subroutine
+    // def _updateRegistry(self, registry: algopy.Application) -> None:
+    proto 1 0
+    // allo.py:89
+    // assert registry.id != algopy.UInt64(0), "ZERO_ADDRESS"
+    frame_dig -1
+    assert // ZERO_ADDRESS
+    // allo.py:90
+    // self.registry = registry
+    byte "registry"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.allo.Allo._updateTreasury(treasury: bytes) -> void:
+_updateTreasury:
+    // allo.py:92-93
+    // @algopy.subroutine
+    // def _updateTreasury(self, treasury: algopy.Account) -> None:
+    proto 1 0
+    // allo.py:94
+    // assert treasury != algopy.Account(), "ZERO_ADDRESS"
+    frame_dig -1
+    global ZeroAddress
+    !=
+    assert // ZERO_ADDRESS
+    // allo.py:95
+    // self.treasury = treasury
+    byte "treasury"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.allo.Allo._updatePercentFee(percentFee: uint64) -> void:
+_updatePercentFee:
+    // allo.py:97-98
+    // @algopy.subroutine
+    // def _updatePercentFee(self, percentFee: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:99
+    // assert percentFee <= algopy.UInt64(10**18), "INVALID_FEE"
+    frame_dig -1
+    int 1000000000000000000
+    <=
+    assert // INVALID_FEE
+    // allo.py:100
+    // self.percentFee = percentFee
+    byte "percentFee"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.allo.Allo._updateBaseFee(baseFee: uint64) -> void:
+_updateBaseFee:
+    // allo.py:102-103
+    // @algopy.subroutine
+    // def _updateBaseFee(self, baseFee: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:104
+    // self.baseFee = baseFee
+    byte "baseFee"
+    frame_dig -1
+    app_global_put
+    retsub
+
+
+// smart_contracts.allo.Allo.createPoolWithCustomStrategy(profileId: bytes, strategy: uint64, initStrategyData: bytes, amount: uint64, metadata: bytes, managers: bytes) -> uint64:
+createPoolWithCustomStrategy:
+    // allo.py:106-116
+    // @arc4.abimethod()
+    // def createPoolWithCustomStrategy(
+    //     self,
+    //     profileId: arc4.DynamicBytes,
+    //     strategy: algopy.Application,
+    //     initStrategyData: arc4.DynamicBytes,
+    // 
+    //     amount: algopy.UInt64,
+    //     metadata: arc4.String,
+    //     managers: arc4.DynamicArray[arc4.Address]  # Changed from algopy.Address to algopy.Account
+    // ) -> algopy.UInt64:
+    proto 6 1
+    // allo.py:117
+    // assert strategy.id != algopy.UInt64(0), "ZERO_ADDRESS"
+    frame_dig -5
+    assert // ZERO_ADDRESS
+    // allo.py:118
+    // cloneable = self.cloneableStrategies.get(strategy.address, default=False)
+    frame_dig -5
+    app_params_get AppAddress
+    assert // application exists
+    byte "cloneableStrategies"
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    int 0
+    swap
+    uncover 2
+    select
+    // allo.py:119
+    // assert cloneable == False, "IS_APPROVED_STRATEGY"
+    !
+    assert // IS_APPROVED_STRATEGY
+    // allo.py:121
+    // poolId = self._createPool(profileId, strategy.id, initStrategyData, amount, metadata, managers)
+    frame_dig -6
+    frame_dig -5
+    frame_dig -4
+    frame_dig -3
+    frame_dig -2
+    frame_dig -1
+    callsub _createPool
+    frame_bury -1
+    frame_bury -4
+    frame_bury -6
+    // allo.py:122
+    // return poolId
+    retsub
+
+
+// smart_contracts.allo.Allo._createPool(profileId: bytes, strategy: uint64, initStrategyData: bytes, amount: uint64, metadata: bytes, managers: bytes) -> uint64, bytes, bytes, bytes:
+_createPool:
+    // allo.py:153-162
+    // @algopy.subroutine
+    // def _createPool(
+    //     self,
+    //     profileId: arc4.DynamicBytes,
+    //     strategy: algopy.UInt64,
+    //     initStrategyData: arc4.DynamicBytes,
+    //     amount: algopy.UInt64,
+    //     metadata: arc4.String,
+    //     managers: arc4.DynamicArray[arc4.Address] # Changed from algopy.Address to algopy.Account
+    // ) -> algopy.UInt64:
+    proto 6 4
+    // allo.py:167
+    // poolId = self._poolIndex + algopy.UInt64(1)
+    int 0
+    byte "_poolIndex"
+    app_global_get_ex
+    assert // check self._poolIndex exists
+    int 1
+    +
+    dup
+    // allo.py:168
+    // self._poolIndex = poolId
+    byte "_poolIndex"
+    dig 1
+    app_global_put
+    // allo.py:170
+    // POOL_MANAGER_ROLE = algopy.op.itob(poolId)
+    itob
+    // allo.py:171
+    // POOL_ADMIN_ROLE = algopy.op.sha256(algopy.op.concat(algopy.op.itob(poolId), algopy.Bytes(b"admin")))
+    dup
+    byte 0x61646d696e
+    concat
+    sha256
+    swap
+    // allo.py:175
+    // strategy=arc4.UInt64(strategy),
+    frame_dig -5
+    itob
+    // allo.py:173-179
+    // pool = Pool(
+    //     profileId=profileId.copy(),
+    //     strategy=arc4.UInt64(strategy),
+    //     metadata=metadata,
+    //     managerRole=arc4.DynamicBytes.from_bytes(POOL_MANAGER_ROLE),
+    //     adminRole=arc4.DynamicBytes.from_bytes(POOL_ADMIN_ROLE)
+    // )
+    frame_dig -6
+    len
+    int 16
+    +
+    byte 0x0010
+    uncover 2
+    concat
+    swap
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    swap
+    frame_dig -2
+    len
+    +
+    dup
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    concat
+    swap
+    dig 2
+    len
+    +
+    itob
+    extract 6 2
+    concat
+    frame_dig -6
+    concat
+    frame_dig -2
+    concat
+    dig 1
+    concat
+    dig 2
+    concat
+    swap
+    // allo.py:181
+    // self.pools[poolId] = arc4.DynamicBytes.from_bytes(pool.bytes)
+    byte "pools"
+    dig 1
+    concat
+    dup
+    box_del
+    pop
+    uncover 2
+    box_put
+    // allo.py:183
+    // self._grantRole(arc4.DynamicBytes.from_bytes(POOL_ADMIN_ROLE), algopy.Txn.sender)
+    txn Sender
+    uncover 2
+    swap
+    callsub _grantRole
+    // allo.py:184
+    // self._setRoleAdmin(arc4.DynamicBytes.from_bytes(POOL_MANAGER_ROLE), arc4.DynamicBytes.from_bytes(POOL_ADMIN_ROLE))
+    callsub _setRoleAdmin
+    pop
+    // allo.py:190-191
+    // # Grant pool manager roles
+    // for manager in managers:
+    frame_dig -1
+    int 0
+    extract_uint16
+    int 0
+
+_createPool_for_header@1:
+    // allo.py:190-191
+    // # Grant pool manager roles
+    // for manager in managers:
+    frame_dig 3
+    frame_dig 2
+    <
+    bz _createPool_after_for@4
+    frame_dig -1
+    extract 2 0
+    frame_dig 3
+    dup
+    cover 2
+    int 32
+    *
+    int 32
+    extract3 // on error: Index access is out of bounds
+    // allo.py:192
+    // assert manager.bytes != algopy.Account().bytes, "ZERO_ADDRESS"
+    dup
+    global ZeroAddress
+    !=
+    assert // ZERO_ADDRESS
+    // allo.py:193
+    // self._grantRole(arc4.DynamicBytes.from_bytes(POOL_MANAGER_ROLE), algopy.Account.from_bytes(manager.bytes))
+    frame_dig 1
+    swap
+    callsub _grantRole
+    frame_bury 1
+    int 1
+    +
+    frame_bury 3
+    b _createPool_for_header@1
+
+_createPool_after_for@4:
+    // allo.py:198
+    // return poolId
+    frame_dig 0
+    frame_dig -6
+    frame_dig -4
+    frame_dig -1
+    uncover 7
+    uncover 7
+    uncover 7
+    uncover 7
+    retsub
+
+
+// smart_contracts.allo.Allo._grantRole(role: bytes, account: bytes) -> bytes:
+_grantRole:
+    // allo.py:316-317
+    // @algopy.subroutine
+    // def _grantRole(self, role: arc4.DynamicBytes, account: algopy.Account) -> None:
+    proto 2 1
+    // allo.py:318
+    // roleKey = arc4.DynamicBytes.from_bytes(algopy.op.concat(role.bytes, account.bytes))
+    frame_dig -2
+    frame_dig -1
+    concat
+    // allo.py:319
+    // self.roles[roleKey] = True
+    byte "roles"
+    swap
+    concat
+    int 1
+    itob
+    box_put
+    frame_dig -2
+    retsub
+
+
+// smart_contracts.allo.Allo._setRoleAdmin(role: bytes, adminRole: bytes) -> bytes, bytes:
+_setRoleAdmin:
+    // allo.py:326-327
+    // @algopy.subroutine
+    // def _setRoleAdmin(self, role: arc4.DynamicBytes, adminRole: arc4.DynamicBytes) -> None:
+    proto 2 2
+    // allo.py:328
+    // self.roleAdmins[role] = adminRole.copy()
+    byte "roleAdmins"
+    frame_dig -2
+    concat
+    dup
+    box_del
+    pop
+    frame_dig -1
+    box_put
+    frame_dig -2
+    frame_dig -1
+    retsub
+
+
+// smart_contracts.allo.Allo.createPool(profileId: bytes, strategy: uint64, initStrategyData: bytes, amount: uint64, metadata: bytes, managers: bytes) -> uint64:
+createPool:
+    // allo.py:124-133
+    // @arc4.abimethod()
+    // def createPool(
+    //     self,
+    //     profileId: arc4.DynamicBytes,
+    //     strategy: algopy.Application,
+    //     initStrategyData: arc4.DynamicBytes,
+    //     amount: algopy.UInt64,
+    //     metadata: arc4.String,
+    //     managers: arc4.DynamicArray[arc4.Address]  # Changed from algopy.Address to algopy.Account
+    // ) -> algopy.UInt64:
+    proto 6 1
+    // allo.py:134
+    // cloneable = self.cloneableStrategies.get(strategy.address, default=False)
+    frame_dig -5
+    app_params_get AppAddress
+    assert // application exists
+    byte "cloneableStrategies"
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    int 0
+    swap
+    uncover 2
+    select
+    // allo.py:135
+    // assert cloneable == True, "NOT_APPROVED_STRATEGY"
+    int 1
+    ==
+    assert // NOT_APPROVED_STRATEGY
+    // allo.py:137-138
+    // # Clone the strategy
+    // nonce = self._nonces.get(algopy.Txn.sender, default=algopy.UInt64(0))
+    byte "_nonces"
+    txn Sender
+    concat
+    box_get
+    swap
+    btoi
+    int 0
+    swap
+    uncover 2
+    select
+    // allo.py:139
+    // cloned_strategy = self._cloneStrategy(strategy, nonce)
+    frame_dig -5
+    dig 1
+    callsub _cloneStrategy
+    swap
+    // allo.py:140
+    // self._nonces[algopy.Txn.sender] = nonce + algopy.UInt64(1)
+    byte "_nonces"
+    txn Sender
+    concat
+    swap
+    int 1
+    +
+    itob
+    box_put
+    // allo.py:142
+    // poolId = self._createPool(profileId, cloned_strategy.id, initStrategyData, amount, metadata, managers)
+    frame_dig -6
+    swap
+    frame_dig -4
+    frame_dig -3
+    frame_dig -2
+    frame_dig -1
+    callsub _createPool
+    frame_bury -1
+    frame_bury -4
+    frame_bury -6
+    // allo.py:143
+    // return poolId
+    retsub
+
+
+// smart_contracts.allo.Allo._cloneStrategy(strategy: uint64, nonce: uint64) -> uint64:
+_cloneStrategy:
+    // allo.py:145-146
+    // @algopy.subroutine
+    // def _cloneStrategy(self, strategy: algopy.Application, nonce: algopy.UInt64) -> algopy.Application:
+    proto 2 1
+    // allo.py:147-150
+    // # Implementation of strategy cloning logic
+    // # For simplicity, assume the cloned strategy is created and returned
+    // # In practice, need to perform inner transaction to clone the strategy
+    // cloned_strategy = algopy.Application()  # Placeholder
+    int 0
+    // allo.py:151
+    // return cloned_strategy
+    retsub
+
+
+// smart_contracts.allo.Allo.updatePoolMetadata(poolId: uint64, metadata: bytes) -> void:
+updatePoolMetadata:
+    // allo.py:200-201
+    // @arc4.abimethod()
+    // def updatePoolMetadata(self, poolId: algopy.UInt64, metadata: arc4.String) -> None:
+    proto 2 0
+    // allo.py:202
+    // self._onlyPoolManager(poolId)
+    frame_dig -2
+    callsub _onlyPoolManager
+    // allo.py:203
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    dup
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:205
+    // pool.metadata = metadata
+    dup
+    int 10
+    extract_uint16
+    dig 1
+    int 0
+    dig 2
+    extract3
+    swap
+    dig 2
+    int 12
+    extract_uint16
+    swap
+    dig 3
+    len
+    swap
+    uncover 4
+    dig 3
+    uncover 3
+    substring3
+    uncover 3
+    frame_dig -1
+    concat
+    swap
+    concat
+    cover 2
+    -
+    swap
+    frame_dig -1
+    len
+    dig 1
+    int 12
+    extract_uint16
+    dig 1
+    +
+    dig 3
+    -
+    itob
+    extract 6 2
+    uncover 2
+    swap
+    replace2 12
+    dup
+    int 14
+    extract_uint16
+    uncover 2
+    +
+    uncover 2
+    -
+    itob
+    extract 6 2
+    replace2 14
+    // allo.py:206
+    // self.pools[poolId] = arc4.DynamicBytes.from_bytes(pool.bytes)
+    dig 1
+    box_del
+    pop
+    box_put
+    retsub
+
+
+// smart_contracts.allo.Allo._onlyPoolManager(poolId: uint64) -> void:
+_onlyPoolManager:
+    // allo.py:299-300
+    // @algopy.subroutine
+    // def _onlyPoolManager(self, poolId: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:301
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -1
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:303
+    // isManager = self._hasRole(pool.managerRole.copy(), algopy.Txn.sender)
+    dup
+    int 12
+    extract_uint16
+    swap
+    dup
+    int 14
+    extract_uint16
+    swap
+    cover 2
+    substring3
+    txn Sender
+    callsub _hasRole
+    pop
+    // allo.py:304
+    // if not isManager:
+    bnz _onlyPoolManager_after_if_else@3
+    // allo.py:305
+    // self._onlyPoolAdmin(poolId)
+    frame_dig -1
+    callsub _onlyPoolAdmin
+
+_onlyPoolManager_after_if_else@3:
+    retsub
+
+
+// smart_contracts.allo.Allo._hasRole(role: bytes, account: bytes) -> uint64, bytes:
+_hasRole:
+    // allo.py:330-331
+    // @algopy.subroutine
+    // def _hasRole(self, role: arc4.DynamicBytes, account: algopy.Account) -> bool:
+    proto 2 2
+    // allo.py:332
+    // roleKey = arc4.DynamicBytes.from_bytes(algopy.op.concat(role.bytes, account.bytes))
+    frame_dig -2
+    frame_dig -1
+    concat
+    // allo.py:333
+    // return self.roles.get(roleKey, default=False)
+    byte "roles"
+    swap
+    concat
+    box_get
+    swap
+    btoi
+    int 0
+    swap
+    uncover 2
+    select
+    frame_dig -2
+    retsub
+
+
+// smart_contracts.allo.Allo._onlyPoolAdmin(poolId: uint64) -> void:
+_onlyPoolAdmin:
+    // allo.py:309-310
+    // @algopy.subroutine
+    // def _onlyPoolAdmin(self, poolId: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:311
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -1
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:313
+    // isAdmin = self._hasRole(pool.adminRole.copy(), algopy.Txn.sender)
+    dup
+    int 14
+    extract_uint16
+    swap
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    txn Sender
+    callsub _hasRole
+    pop
+    // allo.py:314
+    // assert isAdmin, "UNAUTHORIZED"
+    assert // UNAUTHORIZED
+    retsub
+
+
+// smart_contracts.allo.Allo.updateRegistry(registry: uint64) -> void:
+updateRegistry:
+    // allo.py:208-209
+    // @arc4.abimethod()
+    // def updateRegistry(self, registry: algopy.Application) -> None:
+    proto 1 0
+    // allo.py:210
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:211
+    // self._updateRegistry(registry)
+    frame_dig -1
+    callsub _updateRegistry
+    retsub
+
+
+// smart_contracts.allo.Allo._onlyOwner() -> void:
+_onlyOwner:
+    // allo.py:83-84
+    // @algopy.subroutine
+    // def _onlyOwner(self) -> None:
+    proto 0 0
+    // allo.py:85
+    // assert self.owner == algopy.Txn.sender, "Ownable: caller is not the owner"
+    int 0
+    byte "owner"
+    app_global_get_ex
+    assert // check self.owner exists
+    txn Sender
+    ==
+    assert // Ownable: caller is not the owner
+    retsub
+
+
+// smart_contracts.allo.Allo.updateTreasury(treasury: bytes) -> void:
+updateTreasury:
+    // allo.py:213-214
+    // @arc4.abimethod()
+    // def updateTreasury(self, treasury: algopy.Account) -> None:
+    proto 1 0
+    // allo.py:215
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:216
+    // self._updateTreasury(treasury)
+    frame_dig -1
+    callsub _updateTreasury
+    retsub
+
+
+// smart_contracts.allo.Allo.updatePercentFee(percentFee: uint64) -> void:
+updatePercentFee:
+    // allo.py:218-219
+    // @arc4.abimethod()
+    // def updatePercentFee(self, percentFee: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:220
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:221
+    // self._updatePercentFee(percentFee)
+    frame_dig -1
+    callsub _updatePercentFee
+    retsub
+
+
+// smart_contracts.allo.Allo.updateBaseFee(baseFee: uint64) -> void:
+updateBaseFee:
+    // allo.py:223-224
+    // @arc4.abimethod()
+    // def updateBaseFee(self, baseFee: algopy.UInt64) -> None:
+    proto 1 0
+    // allo.py:225
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:226
+    // self._updateBaseFee(baseFee)
+    frame_dig -1
+    callsub _updateBaseFee
+    retsub
+
+
+// smart_contracts.allo.Allo.addToCloneableStrategies(strategy: bytes) -> void:
+addToCloneableStrategies:
+    // allo.py:228-229
+    // @arc4.abimethod()
+    // def addToCloneableStrategies(self, strategy: algopy.Account) -> None:
+    proto 1 0
+    // allo.py:230
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:231
+    // assert strategy != algopy.Account(), "ZERO_ADDRESS"
+    frame_dig -1
+    global ZeroAddress
+    !=
+    assert // ZERO_ADDRESS
+    // allo.py:232
+    // self.cloneableStrategies[strategy] = True
+    byte "cloneableStrategies"
+    frame_dig -1
+    concat
+    int 1
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.allo.Allo.removeFromCloneableStrategies(strategy: bytes) -> void:
+removeFromCloneableStrategies:
+    // allo.py:234-235
+    // @arc4.abimethod()
+    // def removeFromCloneableStrategies(self, strategy: algopy.Account) -> None:
+    proto 1 0
+    // allo.py:236
+    // self._onlyOwner()
+    callsub _onlyOwner
+    // allo.py:237
+    // self.cloneableStrategies[strategy] = False
+    byte "cloneableStrategies"
+    frame_dig -1
+    concat
+    int 0
+    itob
+    box_put
+    retsub
+
+
+// smart_contracts.allo.Allo.addPoolManager(poolId: uint64, manager: bytes) -> void:
+addPoolManager:
+    // allo.py:239-240
+    // @arc4.abimethod()
+    // def addPoolManager(self, poolId: algopy.UInt64, manager: algopy.Account) -> None:
+    proto 2 0
+    // allo.py:241
+    // self._onlyPoolAdmin(poolId)
+    frame_dig -2
+    callsub _onlyPoolAdmin
+    // allo.py:242
+    // assert manager != algopy.Account(), "ZERO_ADDRESS"
+    frame_dig -1
+    global ZeroAddress
+    !=
+    assert // ZERO_ADDRESS
+    // allo.py:243
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:245
+    // self._grantRole(pool.managerRole.copy(), manager)
+    dup
+    int 12
+    extract_uint16
+    swap
+    dup
+    int 14
+    extract_uint16
+    swap
+    cover 2
+    substring3
+    frame_dig -1
+    callsub _grantRole
+    pop
+    retsub
+
+
+// smart_contracts.allo.Allo.removePoolManager(poolId: uint64, manager: bytes) -> void:
+removePoolManager:
+    // allo.py:247-248
+    // @arc4.abimethod()
+    // def removePoolManager(self, poolId: algopy.UInt64, manager: algopy.Account) -> None:
+    proto 2 0
+    // allo.py:249
+    // self._onlyPoolAdmin(poolId)
+    frame_dig -2
+    callsub _onlyPoolAdmin
+    // allo.py:250
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:252
+    // self._revokeRole(pool.managerRole.copy(), manager)
+    dup
+    int 12
+    extract_uint16
+    swap
+    dup
+    int 14
+    extract_uint16
+    swap
+    cover 2
+    substring3
+    frame_dig -1
+    callsub _revokeRole
+    pop
+    retsub
+
+
+// smart_contracts.allo.Allo._revokeRole(role: bytes, account: bytes) -> bytes:
+_revokeRole:
+    // allo.py:321-322
+    // @algopy.subroutine
+    // def _revokeRole(self, role: arc4.DynamicBytes, account: algopy.Account) -> None:
+    proto 2 1
+    // allo.py:323
+    // roleKey = arc4.DynamicBytes.from_bytes(algopy.op.concat(role.bytes, account.bytes))
+    frame_dig -2
+    frame_dig -1
+    concat
+    // allo.py:324
+    // self.roles[roleKey] = False
+    byte "roles"
+    swap
+    concat
+    int 0
+    itob
+    box_put
+    frame_dig -2
+    retsub
+
+
+// smart_contracts.allo.Allo.registerRecipient(poolId: uint64, data: bytes) -> bytes:
+registerRecipient:
+    // allo.py:254-255
+    // @arc4.abimethod()
+    // def registerRecipient(self, poolId: algopy.UInt64, data: arc4.DynamicBytes) -> algopy.String:
+    proto 2 1
+    // allo.py:256-257
+    // # Pass data to the strategy
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    bury 1
+    assert // check self.pools entry exists
+    // allo.py:260
+    // return algopy.String.from_bytes(data.bytes)
+    frame_dig -1
+    retsub
+
+
+// smart_contracts.allo.Allo.fundPool(poolId: uint64, amount: uint64) -> void:
+fundPool:
+    // allo.py:265-266
+    // @arc4.abimethod()
+    // def fundPool(self, poolId: algopy.UInt64, amount: algopy.UInt64) -> None:
+    proto 2 0
+    // allo.py:270
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    bury 1
+    assert // check self.pools entry exists
+    retsub
+
+
+// smart_contracts.allo.Allo.allocate(poolId: uint64, data: bytes) -> bytes:
+allocate:
+    // allo.py:275-276
+    // @arc4.abimethod()
+    // def allocate(self, poolId: algopy.UInt64, data: arc4.DynamicBytes) -> None:
+    proto 2 1
+    // allo.py:277
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    bury 1
+    assert // check self.pools entry exists
+    frame_dig -1
+    retsub
+
+
+// smart_contracts.allo.Allo.batchAllocate(poolIds: bytes, datas: bytes) -> void:
+batchAllocate:
+    // allo.py:282-285
+    // @arc4.abimethod()
+    // def batchAllocate(
+    //     self, poolIds: arc4.DynamicArray[arc4.UInt64], datas: arc4.DynamicArray[arc4.DynamicBytes]
+    // ) -> None:
+    proto 2 0
+    // allo.py:286
+    // assert poolIds.length == datas.length, "MISMATCH"
+    frame_dig -2
+    int 0
+    extract_uint16
+    dup
+    frame_dig -1
+    int 0
+    extract_uint16
+    dup
+    cover 2
+    ==
+    assert // MISMATCH
+    // allo.py:287
+    // for i in algopy.urange(poolIds.length):
+    int 0
+
+batchAllocate_for_header@1:
+    // allo.py:287
+    // for i in algopy.urange(poolIds.length):
+    frame_dig 2
+    frame_dig 0
+    <
+    bz batchAllocate_after_for@4
+    // allo.py:288
+    // self.allocate(algopy.op.btoi(poolIds[i].bytes), datas[i].copy())
+    frame_dig -2
+    extract 2 0
+    frame_dig 2
+    dup
+    cover 2
+    int 8
+    *
+    int 8
+    extract3 // on error: Index access is out of bounds
+    btoi
+    swap
+    frame_dig -1
+    extract 2 0
+    dig 1
+    frame_dig 1
+    <
+    assert // Index access is out of bounds
+    dig 1
+    int 2
+    *
+    dig 1
+    swap
+    extract_uint16
+    dup2
+    extract_uint16
+    int 2
+    +
+    extract3
+    uncover 2
+    swap
+    callsub allocate
+    pop
+    // allo.py:287
+    // for i in algopy.urange(poolIds.length):
+    int 1
+    +
+    frame_bury 2
+    b batchAllocate_for_header@1
+
+batchAllocate_after_for@4:
+    retsub
+
+
+// smart_contracts.allo.Allo.distribute(poolId: uint64, recipientIds: bytes, data: bytes) -> void:
+distribute:
+    // allo.py:290-293
+    // @arc4.abimethod()
+    // def distribute(
+    //     self, poolId: algopy.UInt64, recipientIds: arc4.DynamicArray[arc4.Address], data: arc4.DynamicBytes
+    // ) -> None:
+    proto 3 0
+    // allo.py:294
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -3
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    bury 1
+    assert // check self.pools entry exists
+    retsub
+
+
+// smart_contracts.allo.Allo.getFeeDenominator() -> uint64:
+getFeeDenominator:
+    // allo.py:335-336
+    // @arc4.abimethod()
+    // def getFeeDenominator(self) -> algopy.UInt64:
+    proto 0 1
+    // allo.py:337
+    // return algopy.UInt64(10**18)
+    int 1000000000000000000
+    retsub
+
+
+// smart_contracts.allo.Allo.isPoolAdmin(poolId: uint64, account: bytes) -> uint64:
+isPoolAdmin:
+    // allo.py:339-340
+    // @arc4.abimethod()
+    // def isPoolAdmin(self, poolId: algopy.UInt64, account: algopy.Account) -> bool:
+    proto 2 1
+    // allo.py:341
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:343
+    // return self._hasRole(pool.adminRole.copy(), account)
+    dup
+    int 14
+    extract_uint16
+    swap
+    dup
+    len
+    swap
+    cover 2
+    substring3
+    frame_dig -1
+    callsub _hasRole
+    pop
+    retsub
+
+
+// smart_contracts.allo.Allo.isPoolManager(poolId: uint64, account: bytes) -> uint64:
+isPoolManager:
+    // allo.py:345-346
+    // @arc4.abimethod()
+    // def isPoolManager(self, poolId: algopy.UInt64, account: algopy.Account) -> bool:
+    proto 2 1
+    // allo.py:347
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -2
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    swap
+    dup
+    uncover 2
+    assert // check self.pools entry exists
+    // allo.py:349
+    // isManager = self._hasRole(pool.managerRole.copy(), account)
+    dup
+    int 12
+    extract_uint16
+    swap
+    dup
+    int 14
+    extract_uint16
+    dup
+    cover 3
+    swap
+    cover 2
+    substring3
+    frame_dig -1
+    callsub _hasRole
+    pop
+    // allo.py:350
+    // if not isManager:
+    bnz isPoolManager_else_body@2
+    // allo.py:351
+    // return self._hasRole(pool.adminRole.copy(), account)
+    frame_dig 0
+    dup
+    len
+    frame_dig 1
+    swap
+    substring3
+    frame_dig -1
+    callsub _hasRole
+    pop
+    frame_bury 0
+    retsub
+
+isPoolManager_else_body@2:
+    // allo.py:353
+    // return True
+    int 1
+    frame_bury 0
+    retsub
+
+
+// smart_contracts.allo.Allo.getStrategy(poolId: uint64) -> bytes:
+getStrategy:
+    // allo.py:355-356
+    // @arc4.abimethod()
+    // def getStrategy(self, poolId: algopy.UInt64) -> arc4.UInt64:
+    proto 1 1
+    // allo.py:357
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -1
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:359
+    // return pool.strategy
+    extract 2 8 // on error: Index access is out of bounds
+    retsub
+
+
+// smart_contracts.allo.Allo.getPercentFee() -> uint64:
+getPercentFee:
+    // allo.py:361-362
+    // @arc4.abimethod()
+    // def getPercentFee(self) -> algopy.UInt64:
+    proto 0 1
+    // allo.py:363
+    // return self.percentFee
+    int 0
+    byte "percentFee"
+    app_global_get_ex
+    assert // check self.percentFee exists
+    retsub
+
+
+// smart_contracts.allo.Allo.getBaseFee() -> uint64:
+getBaseFee:
+    // allo.py:365-366
+    // @arc4.abimethod()
+    // def getBaseFee(self) -> algopy.UInt64:
+    proto 0 1
+    // allo.py:367
+    // return self.baseFee
+    int 0
+    byte "baseFee"
+    app_global_get_ex
+    assert // check self.baseFee exists
+    retsub
+
+
+// smart_contracts.allo.Allo.getTreasury() -> bytes:
+getTreasury:
+    // allo.py:369-370
+    // @arc4.abimethod()
+    // def getTreasury(self) -> algopy.Bytes:
+    proto 0 1
+    // allo.py:371
+    // return self.treasury.bytes
+    int 0
+    byte "treasury"
+    app_global_get_ex
+    assert // check self.treasury exists
+    retsub
+
+
+// smart_contracts.allo.Allo.getRegistry() -> uint64:
+getRegistry:
+    // allo.py:373-374
+    // @arc4.abimethod()
+    // def getRegistry(self) -> algopy.UInt64:
+    proto 0 1
+    // allo.py:375
+    // return self.registry.id
+    int 0
+    byte "registry"
+    app_global_get_ex
+    assert // check self.registry exists
+    retsub
+
+
+// smart_contracts.allo.Allo.isCloneableStrategy(strategy: bytes) -> uint64:
+isCloneableStrategy:
+    // allo.py:377-378
+    // @arc4.abimethod()
+    // def isCloneableStrategy(self, strategy: algopy.Account) -> bool:
+    proto 1 1
+    // allo.py:379
+    // return self.cloneableStrategies.get(strategy, default=False)
+    byte "cloneableStrategies"
+    frame_dig -1
+    concat
+    box_get
+    swap
+    btoi
+    int 0
+    swap
+    uncover 2
+    select
+    retsub
+
+
+// smart_contracts.allo.Allo.getPool(poolId: uint64) -> bytes:
+getPool:
+    // allo.py:381-382
+    // @arc4.abimethod()
+    // def getPool(self, poolId: algopy.UInt64) -> Pool:
+    proto 1 1
+    // allo.py:383
+    // pool_bytes = self.pools[poolId].copy()
+    frame_dig -1
+    itob
+    byte "pools"
+    swap
+    concat
+    box_get
+    assert // check self.pools entry exists
+    // allo.py:385
+    // return pool
+    retsub
+
+
+// smart_contracts.allo.Allo.__init__() -> void:
+__init__:
+    // allo.py:53
+    // def __init__(self) -> None:
+    proto 0 0
+    // allo.py:54
+    // self.owner = algopy.Account()  # Changed from algopy.Address() to algopy.Account()
+    byte "owner"
+    global ZeroAddress
+    app_global_put
+    // allo.py:55
+    // self.percentFee = algopy.UInt64()
+    byte "percentFee"
+    int 0
+    app_global_put
+    // allo.py:56
+    // self.baseFee = algopy.UInt64()
+    byte "baseFee"
+    int 0
+    app_global_put
+    // allo.py:57
+    // self._poolIndex = algopy.UInt64()
+    byte "_poolIndex"
+    int 0
+    app_global_put
+    // allo.py:58
+    // self.treasury = algopy.Account()  # Changed from algopy.Address() to algopy.Account()
+    byte "treasury"
+    global ZeroAddress
+    app_global_put
+    // allo.py:59
+    // self.registry = algopy.Application()
+    byte "registry"
+    int 0
+    app_global_put
+    retsub
